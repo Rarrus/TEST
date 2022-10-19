@@ -1,0 +1,66 @@
+
+.navigation{
+  display: flex;
+}
+
+.Price{
+  flex-basis: 20%!important;
+  border: thin solid black;
+  margin-right: 1%;
+}
+
+.Timer{
+  flex-basis: 20%!important;
+  height: 20vh;
+  border: thin solid black
+}
+
+form{
+  position: relative;
+}
+
+body{
+  background-color: black;
+}
+
+@media screen and (min-width: 992px) {
+  form ,#REGISTER, #HAUT {
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #REGISTER {
+    translate:-100%;
+  }
+}
+
+
+a{
+  color: #90FE9F!important;
+}
+
+#barre_nav{
+  margin-top: 20%;
+  display: block!important;
+
+}
+
+#HAUT{
+  display: block!important;
+}
+
+#page{
+  height: 99vh!important;  ;
+  border: thin solid black;
+}
+
+nav{
+  border-bottom: thin solid black !important;
+}
+
+main form{
+  translate: -100%,-100% !important;
+}
+
+
