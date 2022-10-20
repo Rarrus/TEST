@@ -13,8 +13,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="m-1 position-relative">
-  <div class="rounded border bg-gradient" id="page">
+<body class="m-1 position-relative  " style="background-color: var(--bs-indigo)">
+  <div class="rounded border bg-gradient" id="page" style="background-color: var(--bs-indigo)">
     <!-- TETE DE PAGE -->
     <header>
       <nav class="navbar navbar-expand-lg  rounded d-flex flex-lg-column justify-content-around bg-gradient " style="background-color: var(--bs-indigo)">

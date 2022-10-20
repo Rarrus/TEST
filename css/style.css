@@ -24,12 +24,25 @@ body{
 @media screen and (min-width: 992px) {
   form ,#REGISTER, #HAUT {
     position: absolute;
+    
+  }
+}
+
+@media screen and (max-width: 992px) {
+  main input {
+    width: 90vw;
   }
 }
 
 @media screen and (min-width: 992px) {
   #REGISTER {
     translate:-100%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main form {
+    translate: -50%!important;
   }
 }
 
@@ -54,9 +67,7 @@ nav{
   border-bottom: thin solid black !important;
 }
 
-main form{
-  translate: -100%,-100% !important;
-}
+
 
 a{
   flex-basis: 50%!important;
@@ -64,5 +75,9 @@ a{
 
 .navbarSupportedContent{
   width: 1%!important;
+}
+
+#login{
+  border-color: #90FE9F!important;
 }
 

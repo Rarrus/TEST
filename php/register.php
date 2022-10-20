@@ -84,15 +84,22 @@
     </div>
     <form action="login" class=" start-50  ">
       <div class="m-1 mt-2 ">
-        <label for="username" class=" border rounded d-inline  text-uppercase bg-gradient p-1 m-1 mb-1  " style="color: #90FE9F!important;">Username/email</label>
+        <label for="username" class=" border rounded d-inline  text-uppercase bg-gradient p-1 m-1 mb-1  " style="color: #90FE9F!important;">Username</label>
         <input class=" d-block mt-2  bg-gradient rounded border p-1 m-1" style="background-color: var(--bs-indigo)" type="text">
+      </div>
+      <div class="m-1 mt-2">
+        <label for="email" class=" border rounded d-inline  text-uppercase bg-gradient p-1 m-1  " style="color: #90FE9F!important;">Email</label>
+        <input class=" d-block mt-2  bg-gradient rounded border p-1 m-1" style="background-color: var(--bs-indigo)" type="email">
       </div>
       <div class="m-1 mt-2">
         <label for="Password" class=" border rounded d-inline  text-uppercase bg-gradient p-1 m-1 " style="color: #90FE9F!important;">Password</label>
         <input class="d-block mt-2  bg-gradient rounded border p-1 m-1 " style="background-color: var(--bs-indigo)" type="password">
       </div>
-      <a href="register.php" class="text-center d-inline d-block" style="">I haven't an account</a>
-      <a href="register.php" class="text-center d-inline d-block" style="">I lost my password</a>
+      <div class=" m-1 mt-2">
+        <label for="rePassword" class=" border rounded d-inline  text-uppercase bg-gradient p-1 m-1 " style="color: #90FE9F!important;">re-enter password</label>
+        <input class="d-block mt-2  bg-gradient rounded border p-1 m-1 " style="background-color: var(--bs-indigo)" type="password">
+      </div>
+      <a href="login.php" class="text-center d-inline d-block" style="">I have an account</a>
     </form>
 
   </main>
