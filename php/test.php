@@ -19,7 +19,7 @@
     <header>
       <nav class="navbar navbar-expand-lg  rounded d-flex flex-lg-column justify-content-around bg-gradient " style="background-color: var(--bs-indigo)">
         <!-- LOGO + TITRE -->
-        <a class="navbar-brand text-green text-center rounded top-0 start-0 mb-1 border border-white m-2 bg-gradient " id="HAUT" href="#"><img class="img-fluid" src="./../img/logo-site.png" alt="logo du site" style="width: 20%;">TAPY</a>
+        <a class="navbar-brand text-green text-center rounded top-0 start-0 mb-1 border border-white m-2 bg-gradient " id="HAUT" href="test.php"><img class="img-fluid" src="./../img/logo-site.png" alt="logo du site" style="width: 20%;">TAPY</a>
         <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +29,7 @@
           <!-- LIEN ENTRE LES PAGES -->
           <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse" id="barre_nav">
             <li class="nav-item rounded m-2 bg-gradient">
-              <a class="btn nav-link active text-center" style="color: var(--bs-green)" href="#" aria-current="page">HOME</a>
+              <a class="btn nav-link active text-center" style="color: var(--bs-green)" href="test.php" aria-current="page">HOME</a>
             </li>
             <li class="nav-item dropdown rounded m-2 bg-gradient">
               <a class="nav-link  btn dropdown-toggle active text-center" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
