@@ -6,20 +6,45 @@
   <meta charset="utf-8">
   <title>TAPY</title>
   <link href="./../css/style.css" rel="stylesheet">
-  <link href="./../css/style.scss" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="m-1 position-relative  " style="background-color: var(--bs-indigo)">
-  <div class="rounded border bg-gradient" id="page" style="background-color: var(--bs-indigo)">
+
+
+<body class="m-1 position-relative  " >
+<style>html, body {
+      width: 99%!important;
+      height: 99%;
+    }
+    
+    body {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }</style>
+
+  <div class=" "  >
     <!-- TETE DE PAGE -->
     <header>
-      <nav class="navbar navbar-expand-lg  rounded d-flex flex-lg-column justify-content-around bg-gradient " style="background-color: var(--bs-indigo)">
+      <nav class="navbar navbar-expand-lg  rounded d-flex flex-lg-column justify-content-around  " >
         <!-- LOGO + TITRE -->
-        <a class="navbar-brand text-green text-center rounded top-0 start-0 mb-1 border border-white m-2 bg-gradient " id="HAUT" href="test.php"><img class="img-fluid" src="./../img/logo-site.png" alt="logo du site" style="width: 20%;">TAPY</a>
+
+        <a class="navbar-brand  text-center rounded top-0 start-0 mb-1 btn active m-2 text-bg-dark  " id="HAUT" href="test.php"><img class="img-fluid" src="./../img/logo-site.png" alt="logo du site" style="width: 20%;">TAPY</a>
         <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,33 +52,33 @@
 
         <div class="collapse navbar-collapse   "  id="navbarSupportedContent">
           <!-- LIEN ENTRE LES PAGES -->
-          <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse" id="barre_nav">
-            <li class="nav-item rounded m-2 bg-gradient">
-              <a class="btn nav-link active text-center" style="color: var(--bs-green)" href="test.php" aria-current="page">HOME</a>
+          <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse border border-white" id="barre_nav">
+            <li class="nav-item rounded m-2 text-bg-dark ">
+              <a class="btn nav-link active text-center  text-bg-dark " href="test.php" aria-current="page">HOME</a>
             </li>
-            <li class="nav-item dropdown rounded m-2 bg-gradient">
-              <a class="nav-link  btn dropdown-toggle active text-center" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+            <li class="nav-item dropdown rounded m-2 text-bg-dark ">
+              <a class="nav-link  btn dropdown-toggle active text-center  text-bg-dark " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TOOLS
               </a>
-              <ul class="dropdown-menu text-center" style="background-color: var(--bs-purple);background-image: var(--bs-gradient);">
-                <li><a class="dropdown-item bg-gradient" href="#" style="font-weight: bold">TIMER</a></li>
-                <li><a class="dropdown-item bg-gradient" href="#">Another action</a></li>
+              <ul class="dropdown-menu text-center" >
+                <li><a class="dropdown-item text-bg-dark " href="#" style="font-weight: bold">TIMER</a></li>
+                <li><a class="dropdown-item text-bg-dark " href="#">Another action</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item bg-gradient" href="#">Something else here</a></li>
+                <li><a class="dropdown-item text-bg-dark " href="#">Something else here</a></li>
               </ul>
             </li>
 
           </ul>
-          <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse  " id="barre_nav">
-            <li class="nav-item  rounded m-2 bg-gradient">
-              <a class="nav-link btn active text-center" href="#" aria-current="page">FORUMS</a>
+          <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse border border-white ms-1  " id="barre_nav">
+            <li class="nav-item  rounded m-2 text-bg-dark ">
+              <a class="nav-link btn active text-center  text-bg-dark " href="#" aria-current="page">FORUMS</a>
             </li>
 
 
-            <li class="nav-item dropdown  rounded m-2 bg-gradient">
-              <a class="nav-link btn dropdown-toggle active text-center" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+            <li class="nav-item dropdown  rounded m-2  ">
+              <a class="nav-link btn dropdown-toggle active text-center  text-bg-dark " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TURORIEL
               </a>
               <ul class="dropdown-menu text-center">
@@ -69,9 +94,9 @@
           </form>
         </div>
         <!-- LOGIN/REGISTER -->
-        <div class="d-lg-flex flex-nowrap align-content-center justify-content-center top-0 start-100 text-center" id="REGISTER">
-          <a class="btn active rounded m-2 bg-gradient text-uppercase " href="login.php">Login</a>
-          <a class="btn active rounded m-2 bg-gradient text-uppercase" href="register.php">Register</a>
+        <div class="d-lg-flex flex-nowrap align-content-center justify-content-center top-0 start-100 text-center " id="REGISTER">
+          <a class="btn active rounded m-2 text-bg-dark text-uppercase " href="login.php">Login</a>
+          <a class="btn active rounded m-2 text-bg-dark text-uppercase" href="register.php">Register</a> 
         </div>
 
 

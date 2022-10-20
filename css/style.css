@@ -47,9 +47,6 @@ body{
 }
 
 
-a{
-  color: #90FE9F!important;
-}
 
 #barre_nav{
   margin-top: 20%;
@@ -63,9 +60,6 @@ a{
 
 
 
-nav{
-  border-bottom: thin solid black !important;
-}
 
 
 
@@ -77,7 +71,4 @@ a{
   width: 1%!important;
 }
 
-#login{
-  border-color: #90FE9F!important;
-}
 
