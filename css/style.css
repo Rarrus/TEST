@@ -15,9 +15,7 @@
   border: thin solid black
 }
 
-form{
-  position: relative;
-}
+
 
 body{
   background-color: black;
@@ -50,10 +48,7 @@ a{
   display: block!important;
 }
 
-#page{
-  height: 99vh!important;  ;
-  border: thin solid black;
-}
+
 
 nav{
   border-bottom: thin solid black !important;
@@ -63,4 +58,11 @@ main form{
   translate: -100%,-100% !important;
 }
 
+a{
+  flex-basis: 50%!important;
+}
+
+.navbarSupportedContent{
+  width: 1%!important;
+}
 
