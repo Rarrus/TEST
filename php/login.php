@@ -81,8 +81,8 @@
 
         </ul>
         <!-- RECHERCHE -->
-        <form class="top-0 start-5" role="search">
-          <input class="form-control m-2" type="search" aria-label="Search" placeholder="Search">
+        <form class="top-0 start-50" id="search" role="search">
+          <input class="form-control m-2"  type="search" aria-label="Search" placeholder="Search">
         </form>
       </div>
       <!-- LOGIN/REGISTER -->
@@ -96,56 +96,191 @@
 
   </header>
 
-  <main>
-  
-    <div class=" text-center active rounded m-2  ">
-      <h1 class=" border rounded d-inline text-bg-dark  p-1 " id="login">LOGIN</h1>
-    </div>
-    <form action="connexion.php" method="post" class=" start-50  ">
-    <?php
-    if (isset($_GET['login_err'])){
-      $err = htmlspecialchars($_GET['login_err']);
-      switch ($err) {
-        case 'password':
-          ?>
-          <div class="alert alert-danger" role="alert">
-              <strong>Erreur</strong> mot de passe incorrect
-          </div>
-          <?php
-          break;
-          case 'email':
-          ?>
-          
-          <div class="alert alert-danger" role="alert">
-              <strong>Erreur</strong> email incorrect
-          </div>
-          <?php
-          break;
-          case 'already':
-          ?>
-          
-          <div class="alert alert-danger" role="alert">
-              <strong>Erreur</strong> compte introuvable
-          </div>
-          <?php
-          break;
-          
-      }
-    }
-    ?>
-      <div class="m-1 mt-2 ">
-        <label class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 mb-1  ">Username/email</label>
-        <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="text">
-      </div>
-      <div class="m-1 mt-2">
-        <label name="Password" class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 ">Password</label>
-        <input name="password" class="d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="password">
-      </div>
-      <a href="register.php" class="text-center d-inline d-block text-black ">I haven't an account</a>
-      <a href="register.php" class="text-center d-inline d-block text-black ">I lost my password</a>
-      <div class="text-center  "><input type="submit" name="envoyer" value="Je m'inscris" style="background-color: var(--bs-indigo)" class="rounded text-bg-dark"></div>
-    </form>
+  <main class="d-flex flex-nowrap">
+    <div id="box1">
+      <div id="form" class="d-flex flex-wrap justify-content-center ">
+        <style>
+          #box1 {
+            position: relative;
+            width: 20vw;
+            height: 420px;
+            background-color: rgb(48, 3, 3);
+            border-radius: 5px;
+            overflow: hidden;
+            left: 30%;
+            transform: translate(-50%);
+          }
 
+          #box2 {
+            position: relative;
+            width: 20vw;
+            height: 420px;
+            background-color: rgb(48, 3, 3);
+            border-radius: 5px;
+            overflow: hidden;
+            left: 50%;
+            transform: translate(-50%);
+          }
+
+          
+
+          @media screen and (max-width: 992px) {
+            #box ,#box::before, #box::after {
+              width: 98vw;
+            }
+          }
+
+          #box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 20vw;
+            height: 420px;
+            background: linear-gradient(0deg, transparent, #ec33ff, #ec33ff);
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+          }
+
+          #box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 20vw;
+            height: 420px;
+            background: linear-gradient(0deg, transparent, #ec33ff, #ec33ff);
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+            animation-delay: -3s;
+          }
+
+          @keyframes animate {
+            0% {
+              transform: rotate(0deg);
+            }
+
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+
+
+          #form {
+            position: absolute;
+            inset: 5px;
+            border-radius: 5px;
+            background: #28292d;
+            z-index: 1;
+          }
+        </style>
+
+        <div class="   active rounded text-center mt-3  "  id="login">
+          <h1 class=" border rounded d-inline text-bg-dark  p-1 ">LOGIN</h1>
+        </div>
+
+        <form action="connexion.php" method="post" class="" id="form_login">
+
+          <?php
+          if (isset($_GET['login_err'])) {
+            $err = htmlspecialchars($_GET['login_err']);
+            switch ($err) {
+              case 'password':
+          ?>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Erreur</strong> mot de passe incorrect
+                </div>
+              <?php
+                break;
+              case 'email':
+              ?>
+
+                <div class="alert alert-danger" role="alert">
+                  <strong>Erreur</strong> email incorrect
+                </div>
+              <?php
+                break;
+              case 'already':
+              ?>
+
+                <div class="alert alert-danger" role="alert">
+                  <strong>Erreur</strong> compte introuvable
+                </div>
+          <?php
+                break;
+            }
+          }
+          ?>
+          <div class="m-1 mt-2 ">
+            <label class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 mb-1  ">Username/email</label>
+            <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="text">
+          </div>
+          <div class="m-1 mt-3">
+            <label name="Password" class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 ">Password</label>
+            <input name="password" class="d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="password">
+          </div>
+          <a href="register.php" class="text-center d-inline d-block text-white mt-3
+          ">I haven't an account</a>
+          <a href="register.php" class="text-center d-inline d-block text-white ">I lost my password</a>
+          <div class="text-center mt-3  "><input type="submit" name="envoyer" value="Je m'inscris" class="rounded text-bg-dark"></div>
+        </form>
+      </div>
+    </div>
+    <div id="box2">
+      <div id="form" class="d-flex flex-wrap justify-content-center ">
+        
+
+        <div class="   active rounded text-center mt-3  "  id="login">
+          <h1 class=" border rounded d-inline text-bg-dark  p-1 ">LOGIN</h1>
+        </div>
+
+        <form action="connexion.php" method="post" class="" id="form_login">
+
+          <?php
+          if (isset($_GET['login_err'])) {
+            $err = htmlspecialchars($_GET['login_err']);
+            switch ($err) {
+              case 'password':
+          ?>
+                <div class="alert alert-danger" role="alert">
+                  <strong>Erreur</strong> mot de passe incorrect
+                </div>
+              <?php
+                break;
+              case 'email':
+              ?>
+
+                <div class="alert alert-danger" role="alert">
+                  <strong>Erreur</strong> email incorrect
+                </div>
+              <?php
+                break;
+              case 'already':
+              ?>
+
+                <div class="alert alert-danger" role="alert">
+                  <strong>Erreur</strong> compte introuvable
+                </div>
+          <?php
+                break;
+            }
+          }
+          ?>
+          <div class="m-1 mt-2 ">
+            <label class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 mb-1  ">Username/email</label>
+            <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="text">
+          </div>
+          <div class="m-1 mt-3">
+            <label name="Password" class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 ">Password</label>
+            <input name="password" class="d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="password">
+          </div>
+          <a href="register.php" class="text-center d-inline d-block text-white mt-3
+          ">I haven't an account</a>
+          <a href="register.php" class="text-center d-inline d-block text-white ">I lost my password</a>
+          <div class="text-center mt-3  "><input type="submit" name="envoyer" value="Je m'inscris" class="rounded text-bg-dark"></div>
+        </form>
+      </div>
+    </div>
   </main>
 
   <!-- PARTIE Principale  -->

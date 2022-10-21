@@ -1,30 +1,28 @@
-
-.navigation{
+.navigation {
   display: flex;
 }
 
-.Price{
-  flex-basis: 20%!important;
+.Price {
+  flex-basis: 20% !important;
   border: thin solid black;
   margin-right: 1%;
 }
 
-.Timer{
-  flex-basis: 20%!important;
+.Timer {
+  flex-basis: 20% !important;
   height: 20vh;
-  border: thin solid black
+  border: thin solid black;
 }
 
-
-
-body{
+body {
   background-color: black;
 }
 
 @media screen and (min-width: 992px) {
-  form ,#REGISTER, #HAUT {
+  #search,
+  #REGISTER,
+  #HAUT {
     position: absolute;
-    
   }
 }
 
@@ -36,39 +34,30 @@ body{
 
 @media screen and (min-width: 992px) {
   #REGISTER {
-    translate:-100%;
+    translate: -100%;
   }
 }
 
 @media screen and (min-width: 992px) {
-  main form {
-    translate: -50%!important;
+  form#search {
+    translate: -53% !important;
   }
 }
 
-
-
-#barre_nav{
+#barre_nav {
   margin-top: 20%;
-  display: block!important;
-
+  display: block !important;
 }
 
-#HAUT{
-  display: block!important;
+#HAUT {
+  display: block !important;
 }
 
-
-
-
-
-
-a{
-  flex-basis: 50%!important;
+a {
+  flex-basis: 50% !important;
 }
 
-.navbarSupportedContent{
-  width: 1%!important;
+.navbarSupportedContent {
+  width: 1% !important;
 }
-
 
