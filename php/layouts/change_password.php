@@ -2,7 +2,7 @@
     // Démarrage de la session 
     session_start();
     // Include de la base de données
-    require_once '../config.php';
+    require_once './../config/config.php';
 
 
     // Si la session n'existe pas 

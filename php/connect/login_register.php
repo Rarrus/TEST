@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- PAGE D'ACCEUIL FR -->
 <html lang="fr">
-<?php include('header.php'); ?>
+<?php include('./../config/header.php'); ?>
 
 
 <body class="m-1 position-relative  ">
@@ -36,7 +36,7 @@
   <header>
     <nav class="navbar navbar-expand-lg rounded d-flex flex-lg-column justify-content-around  ">
       <!-- LOGO + TITRE -->
-      <a class="navbar-brand  text-center rounded top-0 start-0 mb-1 btn active m-2 text-bg-dark  " id="HAUT" href="test.php"><img class="img-fluid" src="./../img/logo-site.png" alt="logo du site" style="width: 20%;">TAPY</a>
+      <a class="navbar-brand  text-center rounded top-0 start-0 mb-1 btn active m-2 text-bg-dark  " id="HAUT" href="../test.php"><img class="img-fluid" src="./../../img/logo-site.png" alt="logo du site" style="width: 20%;">TAPY</a>
       <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,7 +46,7 @@
         <!-- LIEN ENTRE LES PAGES -->
         <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse border" id="barre_nav">
           <li class="nav-item rounded m-2 text-bg-dark ">
-            <a class="btn nav-link active text-center text-bg-dark" href="test.php" aria-current="page">HOME</a>
+            <a class="btn nav-link active text-center text-bg-dark" href="../test.php" aria-current="page">HOME</a>
           </li>
           <li class="nav-item dropdown rounded m-2  ">
             <a class="nav-link  btn dropdown-toggle active text-center text-bg-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
@@ -86,10 +86,6 @@
         </form>
       </div>
       <!-- LOGIN/REGISTER -->
-      <div class="d-lg-flex flex-nowrap align-content-center justify-content-center top-0 start-100 text-center" id="REGISTER">
-        <a class="btn active rounded m-2 text-bg-dark  text-uppercase " href="login.php">Login</a>
-        <a class="btn active rounded m-2 text-bg-dark  text-uppercase" href="register.php">Register</a>
-      </div>
 
 
     </nav>
@@ -139,7 +135,7 @@
             }
           }
           ?>
-          <div class="m-1 mt-2 ">
+          <div class="m-1 d-block  ">
             <label class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 mb-1  ">Username/email</label>
             <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="text">
           </div>
@@ -147,8 +143,6 @@
             <label name="Password" class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 ">Password</label>
             <input name="password" class="d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="password">
           </div>
-          <a href="register.php" class="text-center d-inline d-block text-white mt-3
-          ">I haven't an account</a>
           <a href="register.php" class="text-center d-inline d-block text-white ">I lost my password</a>
           <div class="text-center mt-3  "><input type="submit" name="envoyer" value="Je m'inscris" class="rounded text-bg-dark"></div>
         </form>
@@ -159,7 +153,7 @@
         
 
       <div class=" text-center active rounded m-3 ">
-          <h1 class=" border rounded d-inline text-bg-dark p-1 " id="login">REGISTER</h1>
+          <h1 class=" border rounded d-inline text-bg-dark p-1 mt-3 " id="login">REGISTER</h1>
         </div>
         <?php
         if (isset($_GET['reg_err'])) {
@@ -219,20 +213,19 @@
             <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 mb-1  ">Username</label>
             <input name="pseudo" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" style="background-color: var(--bs-indigo)" type="text">
           </div>
-          <div class="m-1 mt-2">
+          <div class="m-1 mt-3">
             <label name="email" class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1  ">Email</label>
             <input name="email" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" style="background-color: var(--bs-indigo)" type="email">
           </div>
-          <div class="m-1 mt-2">
+          <div class="m-1 mt-3">
             <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">Password</label>
             <input name="password" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " style="background-color: var(--bs-indigo)" type="password">
           </div>
-          <div class=" m-1 mt-2">
+          <div class=" m-1 mt-3">
             <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
             <input name="password_retype" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " style="background-color: var(--bs-indigo)" type="password">
           </div>
-          <a href="login.php" class="text-center d-inline d-block text-black ">I have an account</a>
-          <div class="text-center  "><input type="submit" name="envoyer" value="Je m'inscris" style="background-color: var(--bs-indigo)" class="rounded text-bg-dark"></div>
+          <div class="text-center  "><input type="submit" name="envoyer" value="Je m'inscris"  class="rounded text-bg-dark mt-3"></div>
         </form>
       </div>
     </div>

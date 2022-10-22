@@ -26,11 +26,6 @@ body {
   }
 }
 
-@media screen and (max-width: 992px) {
-  main input {
-    width: 90vw;
-  }
-}
 
 @media screen and (min-width: 992px) {
   #REGISTER {
@@ -43,9 +38,12 @@ body {
     translate: -53% !important;
   }
 }
-
+@media screen and (min-width: 992px) {
+  #barre_nav {
+    margin-top: 20%;
+  }
+}
 #barre_nav {
-  margin-top: 20%;
   display: block !important;
 }
 
@@ -60,6 +58,16 @@ a {
 .navbarSupportedContent {
   width: 1% !important;
 }
+
+@media only screen 
+and (max-width : 992px) {
+  #box1, #box2, #box1::after, #box2::after, #box1::before, #box2::before{
+      width: 60vw!important;
+      left : 50%!important;
+  }
+}
+
+
 
 #box1 {
   position: relative;
@@ -84,10 +92,25 @@ a {
 }
 
 
+.f-100{
+  flex-basis: 100%!important;
+}
 
-@media screen and (max-width: 992px) {
-  {
-    
+.translate-100{
+  transform: translate(-100%);
+}
+
+.small_screen_login{
+  display:none!important;
+}
+
+@media only screen 
+and (max-width : 992px) {
+  .small_screen_login{
+      display:block!important;
+  }
+  .big_screen_login{
+      display:none!important;
   }
 }
 

@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'config.php'; // ajout connexion bdd 
+require_once './config/config.php'; // ajout connexion bdd 
 // si la session existe pas soit si l'on est pas connecté on redirige
 if (isset($_SESSION['user'])) {
-  
-// On récupere les données de l'utilisateur
+
+  // On récupere les données de l'utilisateur
   $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE token = ?');
   $req->execute(array($_SESSION['user']));
   $data = $req->fetch();
@@ -26,6 +26,8 @@ if (isset($_SESSION['user'])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./../js/screen.js"></script>
+
 </head>
 
 
@@ -73,7 +75,7 @@ if (isset($_SESSION['user'])) {
 
         <div class="collapse navbar-collapse   " id="navbarSupportedContent">
           <!-- LIEN ENTRE LES PAGES -->
-          <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse border border-white" id="barre_nav">
+          <ul class="navbar-nav mb-lg-2  rounded collapse border border-white" id="barre_nav">
             <li class="nav-item rounded m-2 text-bg-dark ">
               <a class="btn nav-link active text-center  text-bg-dark " href="test.php" aria-current="page">HOME</a>
             </li>
@@ -92,7 +94,7 @@ if (isset($_SESSION['user'])) {
             </li>
 
           </ul>
-          <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse border border-white ms-1  " id="barre_nav">
+          <ul class="navbar-nav mb-lg-2 rounded collapse border border-white ms-1  " id="barre_nav">
             <li class="nav-item  rounded m-2 text-bg-dark ">
               <a class="nav-link btn active text-center  text-bg-dark " href="#" aria-current="page">FORUMS</a>
             </li>
@@ -115,12 +117,16 @@ if (isset($_SESSION['user'])) {
           </form>
         </div>
         <!-- LOGIN/REGISTER -->
-        <?php if (!isset($_SESSION["user"])) {
 
-          include("notconnect.php");
-        } else {
-          include("connect.php");
-        }; ?>
+          <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
+            <a class="btn active rounded m-2 text-bg-dark text-uppercase big_screen_login" id=" " href="connect/login_register.php">Login / Register</a>
+          </div>
+
+
+          <div class="  top-0 start-100 text-center" id="SMALL_screen_register">
+            <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/login.php">Login</a>
+            <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/register.php">Register</a>
+          </div>
 
 
 

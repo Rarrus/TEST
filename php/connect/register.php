@@ -101,63 +101,85 @@
   </header>
 
   <main>
-    <div class=" text-center active rounded m-3 " id="box">
-      <div class=" text-center active rounded m-3 " id="form">
-        <style>
-          #box {
-            position: relative;
-            width: 380px;
-            height: 420px;
-            background-color: rgb(48, 3, 3);
-            border-radius: 5px;
-            overflow: hidden;
-          }
-
-          #box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 380px;
-            height: 420px;
-            background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
-            transform-origin: bottom right;
-            animation: animate 6s linear infinite;
-          }
-
-          #box::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 380px;
-            height: 420px;
-            background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
-            transform-origin: bottom right;
-            animation: animate 6s linear infinite;
-            animation-delay: -3s;
-          }
-
-          @keyframes animate {
-            0% {
-              transform: rotate(0deg);
-            }
-
-            100% {
-              transform: rotate(360deg);
-            }
-          }
-
-
-          #form {
-            position: absolute;
-            inset: 2px;
-            border-radius: 5px;
-            background: #28292d;
-            z-index: 1;
-          }
-        </style>
+  <div id="box2">
+      <div id="form2" class="d-flex flex-wrap justify-content-center ">
         
+
+      <div class=" text-center active rounded m-3 ">
+          <h1 class=" border rounded d-inline text-bg-dark p-1 mt-3 " id="login">REGISTER</h1>
+        </div>
+        <?php
+        if (isset($_GET['reg_err'])) {
+          $err = htmlspecialchars($_GET['reg_err']);
+          switch ($err) {
+            case 'success':
+        ?>
+              <div class="alert alert-success">
+                <strong>Succès</strong> Compte crée
+              </div>
+            <?php
+              break;
+            case 'password':
+            ?>
+
+              <div class="alert alert-danger">
+                <strong>Erreur</strong> mot de pass incorrect
+              </div>
+            <?php
+              break;
+            case 'email':
+            ?>
+              <div class="alert alert-danger">
+                <strong>Erreur</strong> email non valide
+              </div>
+            <?php
+              break;
+            case 'email_length':
+            ?>
+
+              <div class="alert alert-danger">
+                <strong>Erreur</strong> email trop long
+              </div>
+            <?php
+              break;
+            case 'pseudo_length':
+            ?>
+              <div class="alert alert-danger">
+                <strong>Erreur</strong> pseudo trop long
+              </div>
+            <?php
+            case 'already':
+            ?>
+
+
+              <div class="alert alert-danger">
+                <strong>Erreur</strong> compte deja existant
+              </div>
+        <?php
+
+          }
+        }
+        ?>
+        <form action="inscription_traitement.php" method="post" class=" start-50  ">
+
+          <div class="m-1 mt-2 ">
+            <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 mb-1  ">Username</label>
+            <input name="pseudo" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" style="background-color: var(--bs-indigo)" type="text">
+          </div>
+          <div class="m-1 mt-3">
+            <label name="email" class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1  ">Email</label>
+            <input name="email" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" style="background-color: var(--bs-indigo)" type="email">
+          </div>
+          <div class="m-1 mt-3">
+            <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">Password</label>
+            <input name="password" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " style="background-color: var(--bs-indigo)" type="password">
+          </div>
+          <div class=" m-1 mt-3">
+            <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
+            <input name="password_retype" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " style="background-color: var(--bs-indigo)" type="password">
+          </div>
+          <div class="text-center  "><input type="submit" name="envoyer" value="Je m'inscris"  class="rounded text-bg-dark mt-3"></div>
+        </form>
       </div>
     </div>
 
