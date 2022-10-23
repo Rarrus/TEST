@@ -38,20 +38,36 @@
                               ATTENTION
                             */
                             // On insère dans la base de données
+                            $token = bin2hex(openssl_random_pseudo_bytes(64));
                             $insert = $bdd->prepare('INSERT INTO utilisateurs(pseudo, email, password, ip, token) VALUES(:pseudo, :email, :password, :ip, :token)');
                             $insert->execute(array(
                                 'pseudo' => $pseudo,
                                 'email' => $email,
                                 'password' => $password,
                                 'ip' => $ip,
-                                'token' => bin2hex(openssl_random_pseudo_bytes(64))
+                                'token' => $token
                             ));
+
+                            $header="MIME-Version: 1.0\r\n";
+                            $header.='From:"[VOUS]"<sword2269@mail.com>'."\n";
+                            $header.='Content-Type:text/html; charset="uft-8"'."\n";
+                            $header.='Content-Transfer-Encoding: 8bit';
+                            $message='
+                            <html>
+                               <body>
+                                  <div align="center">
+                                     <a href="http://127.0.0.1/BIG/php/connect/confirm_compte.php'.urlencode($pseudo).'&key='.$token.'">Confirmez votre compte !</a>
+                                  </div>
+                               </body>
+                            </html>
+                            ';
+                            mail($mail, "Confirmation de compte", $message, $header);
                             // On redirige avec le message de succès
                             header('Location:landing.php?reg_err=success');
                             die();
-                        }else{ header('Location: register.php?reg_err=password'); die();}
-                    }else{ header('Location: register.php?reg_err=email'); die();}
-                }else{ header('Location: register.php?reg_err=email_length'); die();}
-            }else{ header('Location: register.php?reg_err=pseudo_length'); die();}
-        }else{ header('Location: register.php?reg_err=already'); die();}
-    }else{ header('Location: register.php'); die();}
+                        }else{ header('Location: login_register.php?reg_err=password'); die();}
+                    }else{ header('Location: login_register.php?reg_err=email'); die();}
+                }else{ header('Location: login_register.php?reg_err=email_length'); die();}
+            }else{ header('Location: login_register.php?reg_err=pseudo_length'); die();}
+        }else{ header('Location: login_register.php?reg_err=already'); die();}
+    }else{ header('Location: login_register.php'); die();}
