@@ -45,8 +45,9 @@
       </button>
       <!-- BARRE DE NAVIGATION -->
 
-      <div class="collapse navbar-collapse   " id="navbarSupportedContent">
+      < class="collapse navbar-collapse   " id="navbarSupportedContent">
         <!-- LIEN ENTRE LES PAGES -->
+
         <ul class="navbar-nav mb-2 mb-lg-0  rounded collapse border me-1" id="barre_nav">
           <li class="nav-item rounded m-2 ">
 
@@ -84,16 +85,17 @@
           </li>
 
         </ul>
+
         <!-- RECHERCHE -->
         <form class="top-0 start-5" role="search">
           <input class="form-control m-2" type="search" aria-label="Search" placeholder="Search">
         </form>
-      </div>
-      <!-- LOGIN/REGISTER -->
-      <div class="d-lg-flex flex-nowrap align-content-center justify-content-center top-0 start-100 text-center" id="REGISTER">
-        <a class="btn active rounded m-2  text-bg-dark text-uppercase " href="login.php">Login</a>
-        <a class="btn active rounded m-2  text-bg-dark text-uppercase" href="register.php">Register</a>
-      </div>
+        </div>
+        <!-- LOGIN/REGISTER -->
+        <div class="d-lg-flex flex-nowrap align-content-center justify-content-center top-0 start-100 text-center" id="REGISTER">
+          <a class="btn active rounded m-2  text-bg-dark text-uppercase " href="login.php">Login</a>
+          <a class="btn active rounded m-2  text-bg-dark text-uppercase" href="register.php">Register</a>
+        </div>
 
 
     </nav>
@@ -101,11 +103,11 @@
   </header>
 
   <main>
-  <div id="box2">
+    <div id="box2">
       <div id="form2" class="d-flex flex-wrap justify-content-center ">
-        
 
-      <div class=" text-center active rounded m-3 ">
+
+        <div class=" text-center active rounded m-3 ">
           <h1 class=" border rounded d-inline text-bg-dark p-1 mt-3 " id="login">REGISTER</h1>
         </div>
         <?php
@@ -178,7 +180,7 @@
             <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
             <input name="password_retype" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " style="background-color: var(--bs-indigo)" type="password">
           </div>
-          <div class="text-center  "><input type="submit" name="envoyer" value="Je m'inscris"  class="rounded text-bg-dark mt-3"></div>
+          <div class="text-center  "><input type="submit" name="envoyer" value="Je m'inscris" class="rounded text-bg-dark mt-3"></div>
         </form>
       </div>
     </div>

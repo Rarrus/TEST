@@ -23,8 +23,18 @@ body {
   #REGISTER,
   #HAUT {
     position: absolute;
+    top: 80%
   }
 }
+
+.nav_style:hover{
+  color: greenyellow!important;
+  transform: scale(2) translate(100 100 100);
+  
+}
+
+
+
 
 
 @media screen and (min-width: 992px) {
@@ -38,14 +48,8 @@ body {
     translate: -53% !important;
   }
 }
-@media screen and (min-width: 992px) {
-  #barre_nav {
-    margin-top: 20%;
-  }
-}
-#barre_nav {
-  display: block !important;
-}
+
+
 
 #HAUT {
   display: block !important;
@@ -187,4 +191,8 @@ and (max-width : 992px) {
   border-radius: 5px;
   background: #28292d;
   z-index: 1;
+}
+
+.style_search:hover {
+  animation: search 6s linear;
 }

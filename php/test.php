@@ -73,14 +73,14 @@ if (isset($_SESSION['user'])) {
         </button>
         <!-- BARRE DE NAVIGATION -->
 
-        <div class="collapse navbar-collapse   " id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- LIEN ENTRE LES PAGES -->
-          <ul class="navbar-nav mb-lg-2  rounded collapse border border-white" id="barre_nav">
+          <ul class="navbar-nav mb-lg-2 bg-black bg-gradient rounded collapse d-flex flex-nowrap border border-white" id="barre_nav">
             <li class="nav-item rounded m-2 text-bg-dark ">
-              <a class="btn nav-link active text-center  text-bg-dark " href="test.php" aria-current="page">HOME</a>
+              <a class="btn nav-link active text-center  text-bg-dark nav_style" href="test.php" aria-current="page">HOME</a>
             </li>
             <li class="nav-item dropdown rounded m-2 text-bg-dark ">
-              <a class="nav-link  btn dropdown-toggle active text-center  text-bg-dark " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              <a class="nav-link  btn dropdown-toggle active text-center  text-bg-dark nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TOOLS
               </a>
               <ul class="dropdown-menu text-center">
@@ -93,40 +93,42 @@ if (isset($_SESSION['user'])) {
               </ul>
             </li>
 
-          </ul>
-          <ul class="navbar-nav mb-lg-2 rounded collapse border border-white ms-1  " id="barre_nav">
             <li class="nav-item  rounded m-2 text-bg-dark ">
-              <a class="nav-link btn active text-center  text-bg-dark " href="#" aria-current="page">FORUMS</a>
+              <a class="nav-link btn active text-center  text-bg-dark nav_style " href="#" aria-current="page">FORUMS</a>
             </li>
 
 
             <li class="nav-item dropdown  rounded m-2  ">
-              <a class="nav-link btn dropdown-toggle active text-center  text-bg-dark " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              <a class="nav-link btn dropdown-toggle active text-center  text-bg-dark nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TURORIEL
               </a>
-              <ul class="dropdown-menu text-center">
+              <ul class="dropdown-menu text-center nav_style_display">
                 <li><a class="dropdown-item" href="#" style="font-weight: bold">Video</a></li>
                 <li><a class="dropdown-item fg" href="#">Article</a></li>
               </ul>
             </li>
 
+
+
           </ul>
+
           <!-- RECHERCHE -->
-          <form class="top-0 start-50" role="search" id="search">
-            <input class="form-control m-2" type="search" aria-label="Search" placeholder="Search">
+          <form class=" start-50" role="search" id="search">
+            <img src="./../img/search.svg" alt="" class="style_search">
+            <input class="form-control m-2" id="barre_search" type="search" aria-label="Search" placeholder="Search">
           </form>
         </div>
         <!-- LOGIN/REGISTER -->
 
-          <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
-            <a class="btn active rounded m-2 text-bg-dark text-uppercase big_screen_login" id=" " href="connect/login_register.php">Login / Register</a>
-          </div>
+        <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
+          <a class="btn active rounded m-2 text-bg-dark text-uppercase big_screen_login" id=" " href="connect/login_register.php">Login / Register</a>
+        </div>
 
 
-          <div class="  top-0 start-100 text-center" id="SMALL_screen_register">
-            <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/login.php">Login</a>
-            <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/register.php">Register</a>
-          </div>
+        <div class="  top-0 start-100 text-center" id="SMALL_screen_register">
+          <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/login.php">Login</a>
+          <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/register.php">Register</a>
+        </div>
 
 
 
