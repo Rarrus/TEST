@@ -26,6 +26,9 @@ body {
     top: 92%;
   }
 }
+.translate-50{
+  transform: translate(-50%);
+}
 #search{
   position: absolute;
     top: 92%;
@@ -220,7 +223,7 @@ form #search {
 }
 
 .translate-1 {
-  transform: translate(-25%) !important;
+  transform: translate(-60%) !important;
 }
 
 #search input {

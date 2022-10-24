@@ -153,14 +153,24 @@ require_once './config/config.php'; // ajout connexion bdd
 
 
     </header>
-    <main>
-    <!-- liste des articles -->
-      <ul>
-        <?php while ($a = $articles->fetch()) { ?>
-          <li><a href="./article/article.php?id=<?= $a['id'] ?>"><?= $a['titre'] ?></a></li>
-        <?php } ?>
+    <main class="">
+      <!-- liste des articles -->
+      <div class="m-5 w-25 position-absolute start-50 translate-1 ">
+        <ul class=" list-group bg-black">
+          <?php while ($a = $articles->fetch()) { ?>
+            <li class=" list-group-item bg- text-center">
+              <div class="">
+              <img src="./img/<?= $a['img'] ?>" class="w-25 h-auto  float-start bg-light">
+              </div>
+              <div>
+              <a href="./article/article.php?id=<?= $a['id'] ?>" class=" btn active text-center  text-bg-dark nav_style"><?= $a['titre'] ?></a>
+              <p class=" text-bg-dark"> <?= $a['resum'] ?> </p>
+              </div>
+            </li>
+          <?php } ?>
 
-      </ul>
+        </ul>
+      </div>
     </main>
     <!-- PARTIE Principale 
         <main>
