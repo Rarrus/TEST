@@ -26,7 +26,11 @@ body {
     top: 92%;
   }
 }
-
+#search{
+  position: absolute;
+    top: 92%;
+}
+#search,
 .nav_style:hover {
   background: rgb(2, 0, 36);
   background: linear-gradient(

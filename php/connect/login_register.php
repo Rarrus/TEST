@@ -44,7 +44,7 @@
 
       <div class="collapse navbar-collapse mb-1 w-25" id="navbarSupportedContent">
         <!-- LIEN ENTRE LES PAGES -->
-        <ul class="navbar-nav mb-lg-2 bg-black d-lg-flex w-100 bg-gradient  justify-content-between flex-nowrap border border-white" id="barre_nav">
+        <ul class="navbar-nav mb-lg-2 d-lg-flex w-100 bg-gradient  justify-content-between flex-nowrap " id="barre_nav">
           <li class="nav-item rounded m-2 text-bg-dark ">
 
             <a class="btn nav-link active text-center text-bg-dark nav_style" href="../test.php" aria-current="page">HOME</a>

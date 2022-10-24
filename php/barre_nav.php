@@ -8,7 +8,7 @@
         <!-- BARRE DE NAVIGATION -->
 
         <div class="collapse navbar-collapse mb-1 w-25" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-lg-2 bg-black d-lg-flex w-100 justify-content-between  bg-gradient rounded flex-nowrap border border-white">
+          <ul class="navbar-nav mb-lg-2 d-lg-flex w-100 justify-content-between rounded flex-nowrap">
             <li class="nav-item rounded m-2 text-bg-dark ">
               <a class="btn nav-link active text-center  text-bg-dark nav_style" href="test.php" aria-current="page">HOME</a>
             </li>

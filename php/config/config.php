@@ -9,6 +9,7 @@
     try 
     {
         $bdd = new PDO("mysql:host=localhost;dbname=users;charset=utf8", "root", "");
+        $articles = $bdd->query('SELECT * FROM articles ORDER BY date_time_publication DESC');
     }
     catch(PDOException $e)
     {
