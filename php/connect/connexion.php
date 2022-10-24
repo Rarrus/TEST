@@ -28,7 +28,7 @@
                 {
                     // On créer la session et on redirige sur landing.php
                     $_SESSION['user'] = $data['token'];
-                    header('Location: ./../test.php');
+                    header('Location: ./../home.php');
                     die();
                 }else{ header('Location: login.php?login_err=password'); die(); }
             }else{ header('Location: login.php?login_err=email'); die(); }

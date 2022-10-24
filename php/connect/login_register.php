@@ -36,7 +36,7 @@
   <header>
     <nav class="navbar navbar-expand-lg rounded d-flex flex-lg-column   ">
       <!-- LOGO + TITRE -->
-      <a class="d-inline  text-center rounded top-0 start-0 mb-1 btn active m-2 text-bg-dark fs-1  " style="" id="HAUT" href="../test.php">TAPY</a>
+      <a class="d-inline  text-center rounded top-0 start-0 mb-1 btn active m-2 text-bg-dark fs-1  " style="" id="HAUT" href="../home.php">TAPY</a>
       <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -47,7 +47,7 @@
         <ul class="navbar-nav mb-lg-2 d-lg-flex w-100 bg-gradient  justify-content-between flex-nowrap " id="barre_nav">
           <li class="nav-item rounded m-2 text-bg-dark ">
 
-            <a class="btn nav-link active text-center text-bg-dark nav_style" href="../test.php" aria-current="page">HOME</a>
+            <a class="btn nav-link active text-center text-bg-dark nav_style" href="../home.php" aria-current="page">HOME</a>
 
           </li>
           <li class="nav-item dropdown rounded m-2  ">
