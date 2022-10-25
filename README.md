@@ -14,7 +14,7 @@ ACTUEL
 
 #### 27/10/2022
 
-[] Améliorer le systeme de mot de passe 
+- [ ] Améliorer le systeme de mot de passe 
 [] Mot de passe oublié
 
 ### V0.3 "Preparation des outils"
