@@ -52,6 +52,13 @@ ACTUEL
 - [ ] tutorial video
 - [ ] tutorial ecrit
 
+
+### V0.7 "international"
+
+#### 30/11/2022
+
+- [ ] ANGLAIS
+
 ### ...
 
 ### V.1 "Sortie"
