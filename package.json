@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.2",
-    "bootstrap-icons": "^1.9.1"
+    "bootstrap-icons": "^1.9.1",
+    "coinbase": "^2.0.8"
   },
   "devDependencies": {
     "gulp": "^4.0.2"

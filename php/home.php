@@ -25,84 +25,59 @@ require_once './config/config.php'; // ajout connexion bdd
 
 
 
-<body class="m-1 position-relative  ">
-  <style>
-    html,
-    body {
-      width: 99% !important;
-      height: 99%;
-    }
-
-    body {
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-    }
-
-    @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-  </style>
+<body class="m-1 bg-dark ">
 
   <div class=" ">
     <!-- TETE DE PAGE -->
     <header>
-      <nav class="navbar navbar-expand-lg  rounded d-flex flex-lg-column justify-content-around  ">
+      <nav class="navbar navbar-expand-lg justify-content-around">
         <!-- LOGO + TITRE -->
 
-        <a class="d-inline  text-center rounded top-0 start-0 mb-1 btn active m-2 text-bg-dark fs-1  " style="" id="HAUT" href="home.php">TAPY</a>
+        <a class="btn active text-white bg-gradient " id="HAUT" href="home.php">TAPY</a>
         <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- BARRE DE NAVIGATION -->
 
-        <div class="collapse navbar-collapse mb-1 w-25" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-lg-2 d-lg-flex w-100 justify-content-between rounded flex-nowrap">
-            <li class="nav-item rounded m-2 text-bg-dark ">
-              <a class="btn nav-link active text-center  text-bg-dark nav_style" href="home.php" aria-current="page">HOME</a>
+        <div class="collapse navbar-collapse flex-grow-0 flex-wrap " id="navbarSupportedContent">
+          <ul class="navbar-nav f-100 justify-content-between  ">
+            <li class="nav-item flex-grow-1 m-1 ">
+              <a class="btn nav-link active text-center  text-white bg-gradient nav_style" href="home.php" aria-current="page">HOME</a>
             </li>
-            <li class="nav-item dropdown rounded m-2 text-bg-dark ">
-              <a class="nav-link  btn dropdown-toggle active text-center  text-bg-dark nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+            <li class="nav-item dropdown flex-grow-1 m-1  ">
+              <a class="nav-link  btn dropdown-toggle active text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TOOLS
               </a>
-              <ul class="dropdown-menu text-center">
-                <li><a class="dropdown-item text-bg-dark " href="#" style="font-weight: bold">TIMER</a></li>
-                <li><a class="dropdown-item text-bg-dark " href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item text-bg-dark " href="#">Something else here</a></li>
+              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="./tools/timer.php" style="font-weight: bold">TIMER</a></li>
+                <li><a class="dropdown-item  " href="./tools/simulateurs_stamina.php" style="font-weight: bold">Simulateur Stamina</a></li>
+                <li><a class="dropdown-item  " href="./tools/simulateurs_combat.php" style="font-weight: bold">Simulateur Combat</a></li>
+                <li><a class="dropdown-item  " href="./tools/suivi_price.php" style="font-weight: bold">Suivi price</a></li>
+
+
               </ul>
             </li>
 
-            <li class="nav-item  rounded m-2 text-bg-dark ">
-              <a class="nav-link btn active text-center  text-bg-dark nav_style " href="#" aria-current="page">FORUMS</a>
+            <li class="nav-item flex-grow-1 m-1  ">
+              <a class="nav-link btn active text-center  text-white bg-gradient nav_style " href="#" aria-current="page">FORUMS</a>
             </li>
 
 
-            <li class="nav-item dropdown  rounded m-2  ">
-              <a class="nav-link btn dropdown-toggle active text-center  text-bg-dark nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+            <li class="nav-item flex-grow-1 dropdown  m-1  ">
+              <a class="nav-link btn dropdown-toggle active text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TURORIEL
               </a>
               <ul class="dropdown-menu text-center nav_style_display">
                 <li><a class="dropdown-item" href="#" style="font-weight: bold">Video</a></li>
-                <li><a class="dropdown-item fg" href="#">Article</a></li>
+                <li><a class="dropdown-item " href="#">Article</a></li>
               </ul>
             </li>
-          </ul>
-          <!-- LIEN ENTRE LES PAGES -->
 
-          <!-- RECHERCHE -->
+          </ul>
+          <form class="  search f-100 " role="search" id="search">
+            <input class="form-control " id="barre_search" type="search" aria-label="Search" placeholder="Search">
+          </form>
+
 
         </div>
 
@@ -114,22 +89,17 @@ require_once './config/config.php'; // ajout connexion bdd
           $data = $req->fetch();
         ?>
           <form action="./connect/deconnexion.php" method="post" class=" start-50  ">
-            <div class="top-0 start-100 text-center position-absolute translate-100"> <input type="submit" name="envoyer" value="deconnexion" class="rounded text-bg-dark mt-3"></div>
+            <div class="top-0 start-100 text-center position-absolute translate-100"> <input type="submit" name="envoyer" value="deconnexion" class="rounded text-white bg-gradient mt-3"></div>
           </form>
           <?php if ($_SESSION['ADMIN'] = 1) { ?>
             <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
-              <a class="btn active rounded m-2 text-bg-dark text-uppercase big_screen_login" id=" " href="./admin/panel_admin.php">Panel_Admin</a>
+              <a class="btn active rounded m-2 text-white bg-gradient text-uppercase big_screen_login" id=" " href="./admin/panel_admin.php">Panel_Admin</a>
             </div> <?php }
                 } else { ?>
 
-          <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
-            <a class="btn active rounded m-2 text-bg-dark text-uppercase big_screen_login" id=" " href="connect/login_register.php">Login / Register</a>
-          </div>
-
-
-          <div class="  top-0 start-100 text-center" id="SMALL_screen_register">
-            <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/login.php">Login</a>
-            <a class="btn active rounded m-2 text-bg-dark  text-uppercase small_screen_login" id="" href="connect/register.php">Register</a>
+          <div class="" id="SMALL_screen_register">
+            <a class="btn active rounded m-2 text-white bg-gradient  text-uppercase " id="" href="connect/login.php">Login</a>
+            <a class="btn active rounded m-2 text-white bg-gradient  text-uppercase   " id="" href="connect/register.php">Register</a>
           </div>
 
 
@@ -138,13 +108,7 @@ require_once './config/config.php'; // ajout connexion bdd
         <!-- LOGIN/REGISTER -->
 
 
-        <form class="  search   " role="search" id="search">
-          <div id="search2">
-            <img src="./../img/search.svg" alt="" class="invert text-center style_search">
-            <input class="form-control m-2 w-25 " id="barre_search" type="search" aria-label="Search" placeholder="Search">
-          </div>
-          <input class="form-control m-2 w-25" id="barre_search2" type="search" aria-label="Search" placeholder="Search">
-        </form>
+
 
 
 
@@ -153,33 +117,35 @@ require_once './config/config.php'; // ajout connexion bdd
 
 
     </header>
-    <main class="">
-      <!-- liste des articles -->
-      <div class="m-5 w-25 position-absolute start-50 translate-1 ">
-        <ul class=" list-group bg-black">
-          <?php while ($a = $articles->fetch()) { ?>
-            <li class=" list-group-item bg- text-center">
-              <div class="">
-              <img src="./img/<?= $a['img'] ?>" class="w-25 h-auto  float-start bg-light">
-              </div>
-              <div>
-              <a href="./article/article.php?id=<?= $a['id'] ?>" class=" btn active text-center  text-bg-dark nav_style"><?= $a['titre'] ?></a>
-              <p class=" text-bg-dark"> <?= $a['resum'] ?> </p>
-              </div>
-            </li>
-          <?php } ?>
+    <main class="d-flex justify-content-center flex-wrap">
+      <div class=" f-25 d-flex justify-content-center flex-wrap">
+        <div class="d-flex f-100">
+          <div class="flex-grow-1 text-center">
+            <h1 class="text-white bg-gradient">Timer</h1>
+          </div>
+          <div class="flex-grow-1 text-center">
+            <h1 class="text-white bg-gradient">Price</h1>
+          </div>
+        </div>
+        <!-- liste des articles -->
+        <div class="">
+          <ul class=" list-group bg-black">
+            <?php while ($a = $articles->fetch()) { ?>
+              <li class=" list-group-item bg- text-center">
+                <div class="">
+                  <img src="./img/<?= $a['img'] ?>" class="w-25 h-auto  float-start bg-light">
+                </div>
+                <div>
+                  <a href="./article/article.php?id=<?= $a['id'] ?>" class=" btn active text-center  text-bg-dark nav_style"><?= $a['titre'] ?></a>
+                  <p class=" text-bg-dark"> <?= $a['resum'] ?> </p>
+                </div>
+              </li>
+            <?php } ?>
 
-        </ul>
+          </ul>
+        </div>
       </div>
     </main>
-    <!-- PARTIE Principale 
-        <main>
-            <header class="headersubnav  d-flex bg-danger flex-nowrap m-1 ">
-                <h1 class=" flex-fill ">NEWS</h1>
-                <aside class="Price rounded">Price</aside>
-                <aside class="Timer rounded">Timer</aside>
-            </header>
-        </main>-->
   </div>
 </body>
 
