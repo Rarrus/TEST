@@ -6,19 +6,46 @@ http://tapy.rf.gd/home.php
 
 
 
-# V0.0.8
+# V0.1 "BASE"
 
-- ajout panel admin
-- ajout d'article 
+ACTUEL 
 
-## Future MAJ
+### V0.2 "MDP"
 
-# V0.0.9 
-  ??
-  
-# V0.1
+[] Améliorer le systeme de mot de passe 
+[] Mot de passe oublié
 
-  - ranger dossier 
-  - enlever toutes les classes inutiles
-  - responsives
+### V0.3 "Preparation des outils"
+
+
+[] recupere le prix des cryptos
+[] récuperer le prix des nft
+[] récuperer le prix de l'hdv
+[] recupere le Timer World boss
+
+### V0.4 "Outils"
+
+[] page pour gere le prix des NFT
+[] page pour gere le prix de l'hdv
+[] simulateur stamina
+[] simulateur combat
+
+### V0.5 "Articles"
+
+[] ameliorer le systeme de publication d'article 
+[] faire la page d'article 
+[] ameliorer la disposition des articles sur le home
+
+### V0.6 "Tutorial"
+
+[] tutorial video
+[] tutorial ecrit
+
+### ...
+
+### V.1 "Sortie"
+
+[] ranger dossier 
+[] enlever toutes les classes inutiles
+[] responsives
 
