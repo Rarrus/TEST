@@ -23,34 +23,34 @@ ACTUEL
 #### 31/10/2022
 
 
-[] recupere le prix des cryptos
-[] récuperer le prix des nft
-[] récuperer le prix de l'hdv
-[] recupere le Timer World boss
+- [ ] recupere le prix des cryptos
+- [ ] récuperer le prix des nft
+- [ ] récuperer le prix de l'hdv
+- [ ] recupere le Timer World boss
 
 ### V0.4 "Outils"
 
 #### 6/11/2022
 
-[] page pour gere le prix des NFT
-[] page pour gere le prix de l'hdv
-[] simulateur stamina
-[] simulateur combat
+- [ ] page pour gere le prix des NFT
+- [ ] page pour gere le prix de l'hdv
+- [ ] simulateur stamina
+- [ ] simulateur combat
 
 ### V0.5 "Articles"
 
 #### 16/11/2022
 
-[] ameliorer le systeme de publication d'article 
-[] faire la page d'article 
-[] ameliorer la disposition des articles sur le home
+- [ ] ameliorer le systeme de publication d'article 
+- [ ] faire la page d'article 
+- [ ] ameliorer la disposition des articles sur le home
 
 ### V0.6 "Tutorial"
 
 #### 23/11/2022
 
-[] tutorial video
-[] tutorial ecrit
+- [ ] tutorial video
+- [ ] tutorial ecrit
 
 ### ...
 
@@ -58,7 +58,7 @@ ACTUEL
 
 #### 08/12/2022
 
-[] ranger dossier 
-[] enlever toutes les classes inutiles
-[] responsives
+- [ ] ranger dossier 
+- [ ] enlever toutes les classes inutiles
+- [ ] responsives
 
