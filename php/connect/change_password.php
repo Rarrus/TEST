@@ -1,22 +1,6 @@
-<?php
-$bdd = new PDO("mysql:host=127.0.0.1;dbname=users;charset=utf8", "root", "");
-if (isset($_GET['id'])) {
-  $get_id = htmlspecialchars($_GET['id']);
-  $article = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
-  $article->execute(array($get_id));
-  if ($article->rowCount() == 1) {
-    $article = $article->fetch();
-    $titre = $article['titre'];
-    $contenu = $article['contenu'];
-  } else {
-    die('Cet article n\'existe pas !');
-  }
-} else {
-  die('Erreur');
-}
-?>
 <!DOCTYPE html>
-<html>
+<!-- PAGE D'ACCEUIL FR -->
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
@@ -29,12 +13,14 @@ if (isset($_GET['id'])) {
   <script src="./../../js/screen.js"></script>
 </head>
 
-<body class="bg-dark">
+
+<body class="m-1 bg-dark ">
+  <!-- TETE DE PAGE -->
   <header>
     <nav class="navbar navbar-expand-lg justify-content-around">
       <!-- LOGO + TITRE -->
 
-      <a class="btn active text-white bg-gradient " id="HAUT" href="home.php">TAPY</a>
+      <a class="btn active text-white bg-gradient " id="HAUT" href="./../home.php">TAPY</a>
       <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,7 +29,7 @@ if (isset($_GET['id'])) {
       <div class="collapse navbar-collapse flex-grow-0 flex-wrap " id="navbarSupportedContent">
         <ul class="navbar-nav f-100 justify-content-between  ">
           <li class="nav-item flex-grow-1 m-1 ">
-            <a class="btn nav-link active text-center  text-white bg-gradient nav_style" href="home.php" aria-current="page">HOME</a>
+            <a class="btn nav-link active text-center  text-white bg-gradient nav_style" href="./../home.php" aria-current="page">HOME</a>
           </li>
           <li class="nav-item dropdown flex-grow-1 m-1  ">
             <a class="nav-link  btn dropdown-toggle active text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
@@ -98,11 +84,6 @@ if (isset($_GET['id'])) {
           </div> <?php }
               } else { ?>
 
-        <div class="" id="SMALL_screen_register">
-          <a class="btn active rounded m-2 text-white bg-gradient  text-uppercase " id="" href="connect/login.php">Login</a>
-          <a class="btn active rounded m-2 text-white bg-gradient  text-uppercase   " id="" href="connect/register.php">Register</a>
-        </div>
-
 
 
       <?php } ?>
@@ -118,11 +99,37 @@ if (isset($_GET['id'])) {
 
 
   </header>
+  <main>
+    <?php
+    if (isset($_GET['pseudo'], $_GET['token'])) { ?>
+      <form action="./change_password_mail.php">
+        <div class="m-1 mt-3">
+          <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">Password</label>
+          <input name="password" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient "   type="password">
+        </div>
+        <div class=" m-1 mt-3">
+          <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
+          <input name="password_retype" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient "   type="password" onBlur="checkPass()">
+        </div>
+        <input type="submit" name="envoyer" value="envoyer" class="rounded bg-gradient text-bg-dark">
+      </form>
 
-  <main class="d-flex  justify-content-center flex-lg-wrap">
-    <h1 class="text-white bg-gradient"><?= $titre ?></h1>
-    <p class="text-white bg-gradient"><?= $contenu ?></p>
+    <?php } else { ?>
+      <form action="./change_password_mail.php">
+        <?php
+        if (isset($_GET['login_err'])) {
+          $err = htmlspecialchars($_GET['login_err']);
+          switch ($err) {
+            case 'already':
+        ?>
+              <div class="alert alert-danger" role="alert">
+                <strong>Erreur</strong> Compte introuvable
+              </div>
+        <?php }
+        } ?>
+        <label for="email" class="text-bg-dark">Veuillez mettre l'email du compte où vous voulez changer de MDP </label>
+        <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient " required type="text">
+        <input type="submit" name="envoyer" value="envoyer" class="rounded bg-gradient text-bg-dark">
+      </form>
+    <?php } ?>
   </main>
-</body>
-
-</html>

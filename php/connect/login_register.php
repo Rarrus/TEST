@@ -217,19 +217,19 @@
 
           <div class="m-1 mt-2 ">
             <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 mb-1  ">Username</label>
-            <input name="pseudo" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" style="background-color: var(--bs-indigo)" type="text">
+            <input name="pseudo" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient"   type="text">
           </div>
           <div class="m-1 mt-3">
             <label name="email" class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1  ">Email</label>
-            <input name="email" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" style="background-color: var(--bs-indigo)" type="email">
+            <input name="email" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient"   type="email">
           </div>
           <div class="m-1 mt-3">
             <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">Password</label>
-            <input name="password" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " style="background-color: var(--bs-indigo)" type="password">
+            <input name="password" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient "   type="password">
           </div>
           <div class=" m-1 mt-3">
             <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
-            <input name="password_retype" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " style="background-color: var(--bs-indigo)" type="password">
+            <input name="password_retype" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient "   type="password">
           </div>
           <div class="text-center  "><input type="submit" name="envoyer" value="Je m'inscris" class="rounded text-bg-dark mt-3"></div>
         </form>

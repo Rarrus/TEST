@@ -56,18 +56,18 @@
                             <html>
                                <body>
                                   <div align="center">
-                                     <a href="http://127.0.0.1/BIG/php/connect/confirm_compte.php'.urlencode($pseudo).'&key='.$token.'">Confirmez votre compte !</a>
+                                     <a href="http://127.0.0.1/BIG/php/connect/login.php?pseudo='.urlencode($pseudo).'&token='.$token.'">Confirmez votre compte !</a>
                                   </div>
                                </body>
                             </html>
                             ';
-                            mail($mail, "Confirmation de compte", $message, $header);
+                            mail($email, "Confirmation de compte", $message, $header);
                             // On redirige avec le message de succès
                             header('Location:./../home.php?reg_err=success');
                             die();
-                        }else{ header('Location: login_register.php?reg_err=password'); die();}
-                    }else{ header('Location: login_register.php?reg_err=email'); die();}
-                }else{ header('Location: login_register.php?reg_err=email_length'); die();}
-            }else{ header('Location: login_register.php?reg_err=pseudo_length'); die();}
-        }else{ header('Location: login_register.php?reg_err=already'); die();}
-    }else{ header('Location: login_register.php'); die();}
+                        }else{ header('Location: register.php?reg_err=password'); die();}
+                    }else{ header('Location: register.php?reg_err=email'); die();}
+                }else{ header('Location: register.php?reg_err=email_length'); die();}
+            }else{ header('Location: register.php?reg_err=pseudo_length'); die();}
+        }else{ header('Location: register.php?reg_err=already'); die();}
+    }else{ header('Location: register.php'); die();}

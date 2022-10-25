@@ -10,7 +10,7 @@
         $email = strtolower($email); // email transformé en minuscule
         
         // On regarde si l'utilisateur est inscrit dans la table utilisateurs
-        $check = $bdd->prepare('SELECT pseudo, email, password, token FROM utilisateurs WHERE email = ?');
+        $check = $bdd->prepare('SELECT pseudo, email, password, token, confirm FROM utilisateurs WHERE email = ?');
         $check->execute(array($email));
         $data = $check->fetch();
         $row = $check->rowCount();
@@ -20,6 +20,7 @@
         // Si > à 0 alors l'utilisateur existe
         if($row > 0)
         {
+          if($data['confirm'] == '1'){
             // Si le mail est bon niveau format
             if(filter_var($email, FILTER_VALIDATE_EMAIL))
             {
@@ -32,5 +33,6 @@
                     die();
                 }else{ header('Location: login.php?login_err=password'); die(); }
             }else{ header('Location: login.php?login_err=email'); die(); }
+          }else{ header('Location: login.php?login_err=notconfirmed'); die(); }
         }else{ header('Location: login.php?login_err=already'); die(); }
     }else{ header('Location: login.php'); die();} // si le formulaire est envoyé sans aucune données

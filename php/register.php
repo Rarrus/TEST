@@ -6,7 +6,7 @@
   <?php include('./../config/header.php'); ?>
 </head>
 
-<body class="m-1 position-relative  " style="background-color: var(--bs-indigo)">
+<body class="m-1 position-relative  "  >
   <style>
     html,
     body {

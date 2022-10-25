@@ -33,7 +33,7 @@ require_once './config/config.php'; // ajout connexion bdd
       <nav class="navbar navbar-expand-lg justify-content-around">
         <!-- LOGO + TITRE -->
 
-        <a class="btn active text-white bg-gradient " id="HAUT" href="home.php">TAPY</a>
+        <a class="btn  text-white bg-gradient " id="HAUT" href="home.php">TAPY</a>
         <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,10 +42,10 @@ require_once './config/config.php'; // ajout connexion bdd
         <div class="collapse navbar-collapse flex-grow-0 flex-wrap " id="navbarSupportedContent">
           <ul class="navbar-nav f-100 justify-content-between  ">
             <li class="nav-item flex-grow-1 m-1 ">
-              <a class="btn nav-link active text-center  text-white bg-gradient nav_style" href="home.php" aria-current="page">HOME</a>
+              <a class="btn nav-link  text-center border border-dark   text-white bg-gradient nav_style" href="home.php" aria-current="page">HOME</a>
             </li>
             <li class="nav-item dropdown flex-grow-1 m-1  ">
-              <a class="nav-link  btn dropdown-toggle active text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              <a class="nav-link  btn dropdown-toggle border border-dark  text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TOOLS
               </a>
               <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
@@ -58,13 +58,13 @@ require_once './config/config.php'; // ajout connexion bdd
               </ul>
             </li>
 
-            <li class="nav-item flex-grow-1 m-1  ">
-              <a class="nav-link btn active text-center  text-white bg-gradient nav_style " href="#" aria-current="page">FORUMS</a>
+            <li class="nav-item flex-grow-1 m-1  rounded  ">
+              <a class="nav-link btn dropdown-toggle  text-center border border-dark  text-white bg-gradient" href="#" aria-current="page">FORUMS</a>
             </li>
 
 
             <li class="nav-item flex-grow-1 dropdown  m-1  ">
-              <a class="nav-link btn dropdown-toggle active text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              <a class="nav-link btn dropdown-toggle  text-center border border-dark  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
                 TURORIEL
               </a>
               <ul class="dropdown-menu text-center nav_style_display">
@@ -88,18 +88,18 @@ require_once './config/config.php'; // ajout connexion bdd
           $req->execute(array($_SESSION['user']));
           $data = $req->fetch();
         ?>
-          <form action="./connect/deconnexion.php" method="post" class=" start-50  ">
-            <div class="top-0 start-100 text-center position-absolute translate-100"> <input type="submit" name="envoyer" value="deconnexion" class="rounded text-white bg-gradient mt-3"></div>
+          <form action="./connect/deconnexion.php" method="post" class=" ">
+            <div class=""> <input type="submit" name="envoyer" value="Deconnexion" class="rounded text-white bg-danger"></div>
           </form>
-          <?php if ($_SESSION['ADMIN'] = 1) { ?>
+          <?php if ($data['ADMIN'] == 1) { ?>
             <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
-              <a class="btn active rounded m-2 text-white bg-gradient text-uppercase big_screen_login" id=" " href="./admin/panel_admin.php">Panel_Admin</a>
-            </div> <?php }
-                } else { ?>
+              <a class="btn  rounded m-2 text-white bg-gradient text-uppercase big_screen_login" id=" " href="./admin/panel_admin.php">Panel_Admin</a>
+            </div> <?php }}
+                else { ?>
 
           <div class="" id="SMALL_screen_register">
-            <a class="btn active rounded m-2 text-white bg-gradient  text-uppercase " id="" href="connect/login.php">Login</a>
-            <a class="btn active rounded m-2 text-white bg-gradient  text-uppercase   " id="" href="connect/register.php">Register</a>
+            <a class="btn  rounded m-2 text-white bg-gradient  text-uppercase " id="" href="connect/login.php">Login</a>
+            <a class="btn  rounded m-2 text-white bg-gradient  text-uppercase   " id="" href="connect/register.php">Register</a>
           </div>
 
 
@@ -136,7 +136,7 @@ require_once './config/config.php'; // ajout connexion bdd
                   <img src="./img/<?= $a['img'] ?>" class="w-25 h-auto  float-start bg-light">
                 </div>
                 <div>
-                  <a href="./article/article.php?id=<?= $a['id'] ?>" class=" btn active text-center  text-bg-dark nav_style"><?= $a['titre'] ?></a>
+                  <a href="./article/article.php?id=<?= $a['id'] ?>" class=" btn  text-center  text-bg-dark nav_style"><?= $a['titre'] ?></a>
                   <p class=" text-bg-dark"> <?= $a['resum'] ?> </p>
                 </div>
               </li>
