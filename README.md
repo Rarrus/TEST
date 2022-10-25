@@ -15,11 +15,7 @@ ACTUEL
 #### 27/10/2022
 
 - [ ] Améliorer le systeme de mot de passe 
-<<<<<<< HEAD
 - [ ] Mot de passe oublié
-=======
-[] Mot de passe oublié
->>>>>>> 140eecd95d45764c9664cca58ac69bc66d1bb82c
 
 ### V0.3 "Preparation des outils"
 
