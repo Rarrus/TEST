@@ -16,6 +16,7 @@ ACTUEL
 
 - [ ] Améliorer le systeme de mot de passe 
 - [ ] Mot de passe oublié
+- [x] Confirmation du compte
 
 ### V0.3 "Preparation des outils"
 
