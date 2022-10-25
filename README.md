@@ -17,6 +17,7 @@ ACTUEL
 - [ ] Améliorer le systeme de mot de passe 
 - [ ] Mot de passe oublié
 - [x] Confirmation du compte
+- [ ] Arrive du JS
 
 ### V0.3 "Preparation des outils"
 
