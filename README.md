@@ -8,16 +8,16 @@ http://tapy.rf.gd/home.php
 
 # V0.1 "BASE"
 
-ACTUEL 
+
 
 ### V0.2 "MDP"  
 
-#### 27/10/2022
+ACTUEL 
 
-- [ ] Améliorer le systeme de mot de passe 
-- [ ] Mot de passe oublié
+- [x] Améliorer le systeme de mot de passe 
+- [x] Mot de passe oublié
 - [x] Confirmation du compte
-- [ ] Arrive du JS
+- [x] Arrive du JS
 
 ### V0.3 "Preparation des outils"
 
