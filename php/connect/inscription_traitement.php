@@ -63,11 +63,11 @@
                             ';
                             mail($email, "Confirmation de compte", $message, $header);
                             // On redirige avec le message de succès
-                            header('Location:./../home.php?reg_err=success');
+                            header('Location:./login.php?reg_err=success');
                             die();
                         }else{ header('Location: register.php?reg_err=password'); die();}
                     }else{ header('Location: register.php?reg_err=email'); die();}
                 }else{ header('Location: register.php?reg_err=email_length'); die();}
             }else{ header('Location: register.php?reg_err=pseudo_length'); die();}
         }else{ header('Location: register.php?reg_err=already'); die();}
-    }else{ header('Location: register.php'); die();}
+    }else{ header('Location: register.php?reg_err=already'); die();}

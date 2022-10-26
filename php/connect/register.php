@@ -8,9 +8,8 @@
 <!-- PAGE D'ACCEUIL FR -->
 <html lang="fr">
 
-<head>
-  <?php include('./../config/header.php'); ?>
-</head>
+
+<?php include('./../config/header.php'); ?>
 
 <body class="m-1 bg-dark">
 
@@ -28,7 +27,7 @@
       <div class="collapse navbar-collapse flex-grow-0 flex-wrap " id="navbarSupportedContent">
         <ul class="navbar-nav f-100 justify-content-between  ">
           <li class="nav-item flex-grow-1 m-1 ">
-            <a class="btn nav-link active text-center  text-white bg-gradient nav_style" href="home.php" aria-current="page">HOME</a>
+            <a class="btn nav-link active text-center  text-white bg-gradient nav_style" href="./../home.php" aria-current="page">HOME</a>
           </li>
           <li class="nav-item dropdown flex-grow-1 m-1  ">
             <a class="nav-link  btn dropdown-toggle active text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
@@ -102,111 +101,105 @@
   </header>
 
   <main>
-    <div id="box2">
-      <div id="form2" class="d-flex flex-wrap justify-content-center ">
+    <div class="">
 
-
-        <div class=" text-center active rounded m-3 ">
-          <h1 class=" border rounded d-inline text-bg-dark p-1 mt-3 " id="login">REGISTER</h1>
-        </div>
-        <?php
-        if (isset($_GET['reg_err'])) {
-          $err = htmlspecialchars($_GET['reg_err']);
-          switch ($err) {
-            case 'success':
-        ?>
-              <div class="alert alert-success">
-                <strong>Succès</strong> Compte crée
-              </div>
-            <?php
-              break;
-            case 'password':
-            ?>
-
-              <div class="alert alert-danger">
-                <strong>Erreur</strong> mot de pass incorrect
-              </div>
-            <?php
-              break;
-            case 'email':
-            ?>
-              <div class="alert alert-danger">
-                <strong>Erreur</strong> email non valide
-              </div>
-            <?php
-              break;
-            case 'email_length':
-            ?>
-
-              <div class="alert alert-danger">
-                <strong>Erreur</strong> email trop long
-              </div>
-            <?php
-              break;
-            case 'pseudo_length':
-            ?>
-              <div class="alert alert-danger">
-                <strong>Erreur</strong> pseudo trop long
-              </div>
-            <?php
-            case 'already':
-            ?>
-
-
-              <div class="alert alert-danger">
-                <strong>Erreur</strong> compte deja existant
-              </div>
-        <?php
-
-          }
-        }
-        ?>
-        <form action="inscription_traitement.php" method="post" class=" start-50  ">
-
-          <div class="m-1 mt-2 ">
-            <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 mb-1  ">Username</label>
-            <input name="pseudo" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" type="text">
-          </div>
-          <div class="m-1 mt-3">
-            <label name="email" class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1  ">Email</label>
-            <input name="email" class=" d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" type="email">
-          </div>
-
-          <div class="m-1 mt-3">
-            <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">Password</label>
-            <input name="password" id="P1" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " required type="password">
-          </div>
-          <div class=" m-1 mt-3">
-            <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
-            <input name="password_retype" id="P2" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " required type="password" onkeyup="checkPass()">
-          </div>
-          <a href="register.php" class="text-center d-inline d-block text-white mt-3
-          ">I have an account</a>
-          <div class="text-center  " id="div_login"><label class="btn rounded text-bg-dark bg-danger mt-3">Je m'inscris</label></div>
-          <script>
-            function checkPass() {
-              var champA = document.getElementById("P1").value;
-              var champB = document.getElementById("P2").value;
-
-              if (champA == champB) {
-                const elt = document.createElement("input");
-                elt.setAttribute("type", "submit"); // Change le type de l'input en un type password
-                elt.setAttribute("name", "envoyer"); // Change le nom de l'input en my-password
-                elt.setAttribute("type", "password"); // Change le type de l'input en un type password
-                elt.setAttribute("name", "my-password"); // Change le nom de l'input en my-password
-                elt.classList.add("rounded", "text-bg-dark", "mt-3");
-                divcomp.innerHTML = '<input type="submit" name="envoyer" value="Je m\'inscris" class="rounded text-bg-dark mt-3">';
-              } else {
-
-                divcomp.innerHTML = '<label class = "text-center d-inline d-block text-white" > MDP non identique < /label>';
-              }
-            }
-          </script>
-
-        </form>
+      <div class=" text-center active rounded m-3 ">
+        <h1 class=" border rounded d-inline text-bg-dark p-1 mt-3 " id="login">REGISTER</h1>
       </div>
-    </div>
+      <?php
+      if (isset($_GET['reg_err'])) {
+        $err = htmlspecialchars($_GET['reg_err']);
+        switch ($err) {
+          case 'success':
+      ?>
+            <div class=" text-centeralert alert-success">
+              <strong>Succès</strong> Compte crée
+            </div>
+          <?php
+            break;
+          case 'password':
+          ?>
 
+            <div class=" text-centeralert alert-danger">
+              <strong>Erreur</strong> mot de pass incorrect
+            </div>
+          <?php
+            break;
+          case 'email':
+          ?>
+            <div class=" text-centeralert alert-danger">
+              <strong>Erreur</strong> email non valide
+            </div>
+          <?php
+            break;
+          case 'email_length':
+          ?>
+
+            <div class=" text-centeralert alert-danger">
+              <strong>Erreur</strong> email trop long
+            </div>
+          <?php
+            break;
+          case 'pseudo_length':
+          ?>
+            <div class=" text-centeralert alert-danger">
+              <strong>Erreur</strong> pseudo trop long
+            </div>
+          <?php
+          case 'already':
+          ?>
+
+
+            <div class=" text-centeralert alert-danger">
+              <strong>Erreur</strong> compte deja existant
+            </div>
+      <?php
+
+        }
+      }
+      ?>
+      <form action="inscription_traitement.php" method="post" class=" text-center   ">
+
+        <div class=" text-center m-1 mt-2 ">
+          <label class=" text-center border rounded d-inline  text-uppercase  text-bg-dark p-1 mt-2 mb-1   ">Username</label>
+          <div></div>
+          <input name="pseudo" class=" text-center d-inline mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" required type="text">
+        </div>
+        <div class=" text-center ">
+          <label name="email" class="text-center border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1  ">Email</label>
+          <div></div>
+          <input name="email" id="M1" class=" text-center  mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient" required type="email" onkeyup="check_mail()">
+        </div>
+
+
+        <div class=" text-center m-1 mt-3 ">
+          <label class=" text-center border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">Password</label>
+          <div></div>
+          <input name="password" id="P1" class=" text-center mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " required type="password" onkeyup="check_mdp()">
+          <i class="far fa-eye invert" style="margin-left: -30px; cursor: pointer;" id="togglePassword" onclick="reveal()"></i>
+    </div>
+    </div>
+    <div class=" text-center m-1 mt-3 d-block">
+      <label class=" text-center border rounded d-inline text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
+      <div></div>
+      <input name="password_retype" id="P2" class=" text-center  mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " required type="password" onkeyup="check_mdp()">
+      <i class="far fa-eye invert" style="margin-left: -30px; cursor: pointer;" id="togglePassword" onclick="reveal()"></i>
+      <span id="msg"></span>
+
+      <p class=" text-success">Mot de passe ayant minimun : </p>
+      <p class=" text-success">8 caractères</p>
+      <p class=" text-success">1 lettre majuscule</p>
+      <p class=" text-success">1 lettre miniscule</p>
+      <p class=" text-success">1 chiffre</p>
+    </div>
+    <a href="register.php" class=" text-center d-inline d-block text-white mt-1
+          ">I have an account</a>
+    <div class=" text-center mt-3  " id="div_login"><button onclick="validate()" name="envoyer" value="Je m'inscris" class=" rounded text-centerr text-bg-dark" id="B1">Je m'inscris</button></div>
+
+
+    </form>
+
+    </div>
   </main>
 
   <!-- PARTIE Principale  -->

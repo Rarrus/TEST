@@ -16,6 +16,8 @@ if (isset($_SESSION['user'])) {
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./../../js/screen.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
 </head>
 
 
@@ -106,13 +108,8 @@ if (isset($_SESSION['user'])) {
   </header>
 
   <main>
-    <div id="box1">
-      <div id="form1" class="d-flex flex-wrap justify-content-center ">
-        <style>
-
-        </style>
-
-        <div class=" active rounded  m-3  ">
+   
+        <div class="text-center active rounded  m-3  ">
           <h1 class=" border rounded d-inline text-bg-dark  p-1 mt-3">LOGIN</h1>
         </div>
 
@@ -179,21 +176,22 @@ if (isset($_SESSION['user'])) {
                   }
 
           ?>
-          <div class="m-1 d-block ">
+          <div class="text-center m-1 mt-2 ">
             <label class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 mb-1  ">Username/email</label>
-            <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="text">
+            <div></div>
+            <input name="email" class=" text-center  mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="text">
           </div>
-          <div class="m-1 mt-3">
+          <div class="text-center m-1 mt-3">
             <label name="Password" class=" border rounded d-inline  text-uppercase text-bg-dark  p-1 m-1 ">Password</label>
-            <input name="password" class="d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="password">
+            <div></div>
+            <input name="password" class="text-center mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient" type="password">
+            <i class="far fa-eye invert" style="margin-left: -30px; cursor: pointer;" id="togglePassword" onclick="reveal()"></i>
           </div>
           <a href="register.php" class="text-center d-inline d-block text-white mt-3
           ">I haven't an account</a>
           <a href="change_password.php" class="text-center d-inline d-block text-white ">I lost my password</a>
           <div class="text-center mt-3  "><input type="submit" name="envoyer" value="Je m'inscris" class="rounded text-bg-dark"></div>
         </form>
-      </div>
-    </div>
   </main>
 
   <!-- PARTIE Principale  -->

@@ -28,6 +28,10 @@ body {
   }
 }
 
+p{
+  margin-bottom: 0 !important;
+}
+
 #HAUT {
   display: block !important;
   color: #fff;
@@ -77,6 +81,10 @@ body {
 
 .translate-100 {
   transform: translate(-100%);
+}
+
+.translate-200 {
+  transform: translate(-200%);
 }
 
 .small_screen_login {

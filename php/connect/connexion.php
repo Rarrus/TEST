@@ -2,7 +2,7 @@
     session_start(); // Démarrage de la session
     require_once './../config/config.php'; // On inclut la connexion à la base de données
 
-    if(!empty($_POST['email']) && !empty($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
+    if((!empty($_POST['email']) || !empty($_POST['users']))&& !empty($_POST['password'])) // Si il existe les champs email, password et qu'il sont pas vident
     {
         $email = htmlspecialchars($_POST['email']); 
         $password = htmlspecialchars($_POST['password']);
@@ -10,7 +10,7 @@
         $email = strtolower($email); // email transformé en minuscule
         
         // On regarde si l'utilisateur est inscrit dans la table utilisateurs
-        $check = $bdd->prepare('SELECT pseudo, email, password, token, confirm FROM utilisateurs WHERE email = ?');
+        $check = $bdd->prepare('SELECT pseudo, email, password, token, confirm FROM utilisateurs WHERE email = ? OR pseudo = ?');
         $check->execute(array($email));
         $data = $check->fetch();
         $row = $check->rowCount();

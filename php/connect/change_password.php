@@ -11,6 +11,8 @@
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./../../js/screen.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
 </head>
 
 
@@ -102,20 +104,22 @@
   <main>
     <?php
     if (isset($_GET['pseudo'], $_GET['token'])) { ?>
-      <form action="./change_password_mail.php">
+      <form action="./change_password_mail.php" class="text-center">
         <div class="m-1 mt-3">
           <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">Password</label>
-          <input name="password" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient "   type="password">
+          <input name="password" id="P1" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient " required  type="password" onkeyup="check_mdp()">
+          <i class="far fa-eye invert" style="margin-left: -30px; cursor: pointer;" id="togglePassword" onclick="reveal()"></i>
         </div>
         <div class=" m-1 mt-3">
           <label class=" border rounded d-inline  text-uppercase  text-bg-dark p-1 m-1 ">re-enter password</label>
-          <input name="password_retype" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient "   type="password" onBlur="checkPass()">
+          <input name="password_retype" id="P2" class="d-block mt-2   text-bg-dark rounded border p-1 m-1 bg-gradient "  required type="password" onkeyup="check_mdp()">
+          <i class="far fa-eye invert" style="margin-left: -30px; cursor: pointer;" id="togglePassword" onclick="reveal()"></i>
         </div>
         <input type="submit" name="envoyer" value="envoyer" class="rounded bg-gradient text-bg-dark">
       </form>
 
     <?php } else { ?>
-      <form action="./change_password_mail.php">
+      <form action="./change_password_mail.php"  method="post" class=" text-center">
         <?php
         if (isset($_GET['login_err'])) {
           $err = htmlspecialchars($_GET['login_err']);
@@ -128,7 +132,7 @@
         <?php }
         } ?>
         <label for="email" class="text-bg-dark">Veuillez mettre l'email du compte où vous voulez changer de MDP </label>
-        <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient " required type="text">
+        <input name="email" class=" d-block mt-2  text-bg-dark  rounded border p-1 m-1 bg-gradient " required type="email">
         <input type="submit" name="envoyer" value="envoyer" class="rounded bg-gradient text-bg-dark">
       </form>
     <?php } ?>

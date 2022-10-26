@@ -1,6 +1,6 @@
 <?php  
     require_once './../config/config.php'; // On inclut la connexion à la base de données
-
+    
     if(!empty($_POST['email'])) // Si il existe le champ email et qu'il sont pas vident
     {
         $email = htmlspecialchars($_POST['email']); 
@@ -22,16 +22,13 @@
           <html>
              <body>
                 <div align="center">
-                   <a href="http://127.0.0.1/BIG/php/connect/change_password.php?pseudo='.urlencode($pseudo).'&token='.$token.'">Confirmez votre compte !</a>
+                   <a href="http://127.0.0.1/BIG/php/connect/change_password.php?pseudo='.urlencode($pseudo).'&token='.$token.'">Changer de MDP !</a>
                 </div>
              </body>
           </html>
           ';
-          mail($email, "Confirmation de compte", $message, $header);
+          mail($email, "Changer de MDP", $message, $header);
+          header('Location:./../home.php?reg_err=success');
             
         }else{ header('Location: login.php?login_err=already'); die(); }
-      }else{ header('Location: change_password.php'); die(); }
-      if(!empty($_POST['password']) && !empty($_POST['password_retype']))
-      {
-
-      }else{ header('Location: change_password.php'); die(); }
+      }else{ echo $_POST['email']; die(); }
