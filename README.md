@@ -45,6 +45,7 @@ ACTUEL
 - [ ] ameliorer le systeme de publication d'article 
 - [ ] faire la page d'article 
 - [ ] ameliorer la disposition des articles sur le home
+- [ ] crée un article avec du markdown
 
 ### V0.6 "Tutorial"
 
