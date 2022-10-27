@@ -22,11 +22,6 @@ body {
   }
 }
 
-@media screen and (min-width: 992px) {
-  #REGISTER {
-    translate: -100%;
-  }
-}
 
 p{
   margin-bottom: 0 !important;
@@ -210,5 +205,5 @@ p{
 }
 
 a{
-  font: "Fuzzy Bubbles" !important;
+  font-family: Fuzzy Bubbles !important;
 }
