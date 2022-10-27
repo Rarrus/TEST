@@ -15,7 +15,7 @@ function validate() {
   }
 }
 
-let check_mdp = () => {
+var check_mdp = () => {
   var str3 = document.getElementById("P1").value;
   var str4 = document.getElementById("P2").value;
   if (str3 != ''){
@@ -55,11 +55,11 @@ let check_mdp = () => {
   }
 };
 
-let check_mail = () => {
+var check_mail = () => {
   var str3 = document.getElementById("M1").value;
   if (
     str3.match(
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     )
   ) {
     document.getElementById("M1").className =
@@ -71,7 +71,7 @@ let check_mail = () => {
 };
 
 
-let  reveal =() => {
+var  reveal =() => {
   var x = document.getElementById("P1");
   var y = document.getElementById("P2");
   if (x.type === "password") {
@@ -82,3 +82,31 @@ let  reveal =() => {
     y.type = "password";
   }
 } 
+
+
+async function crypto() {
+    var response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tap-fantasy&vs_currencies=usd');
+    var data = await response.text();
+    var data2 = data.replace('{"tap-fantasy":{"usd":','').replace('}}','');
+    document.getElementById("TAP").innerHTML = " TAP/USD : " + data2 + " ";
+    var response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=busd&vs_currencies=usd');
+    var data = await response.text();
+    var data2 = data.replace('{"busd":{"usd":','').replace('}}','');
+    document.getElementById("BUSD").innerHTML = " BUSD/USD : " + data2 + " ";
+    var response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tap-fantasy-mc&vs_currencies=usd');
+    var data = await response.text();
+    var data2 = data.replace('{"tap-fantasy-mc":{"usd":','').replace('{"tap-fantasy-mc":{"usd":','').replace('}}','');
+    document.getElementById("MC").innerHTML = " MC/USD : " + data2 + " ";
+    var response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=binancecoin&vs_currencies=usd');
+    var data = await response.text();
+    var data2 = data.replace('{"binancecoin":{"usd":','').replace('}}','');
+    document.getElementById("BNB").innerHTML = " BNB/USD : " + data2 + " ";
+    var response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd');
+    var data = await response.text();
+    var data2 = data.replace('{"solana":{"usd":','').replace('}}','')
+    document.getElementById("SOL").innerHTML = " SOL/USD : " + data2 + " ";
+    setTimeout(crypto,60000);
+}
+ 
+
+  

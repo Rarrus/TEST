@@ -20,7 +20,7 @@ require_once './config/config.php'; // ajout connexion bdd
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./../js/screen.js"></script>
-  <link href=’https://fonts.googleapis.com/css?family=Fuzzy+Bubbles’ rel=’stylesheet’/>
+  <link href=’https://fonts.googleapis.com/css?family=Fuzzy+Bubbles’ rel=’stylesheet’ />
 
 </head>
 
@@ -30,83 +30,86 @@ require_once './config/config.php'; // ajout connexion bdd
 
   <div class=" ">
     <!-- TETE DE PAGE -->
-    <header>
-      <nav class="navbar navbar-expand-lg justify-content-around">
-        <!-- LOGO + TITRE -->
+    <div style="background-color: #495057 ;" class="rounded pb-2">
+      <header>
+        <nav class="navbar navbar-expand-lg justify-content-around flex-wrap">
+          <!-- LOGO + TITRE -->
+          <div class=" f-100 text-center">
+            <a class="btn  border border-dark text-white bg-gradient " href="home.php">TAPY</a>
+            <?php if (isset($_SESSION['user'])) {
 
-        <a class="btn  text-white bg-gradient " id="HAUT" href="home.php">TAPY</a>
-        <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- BARRE DE NAVIGATION -->
+              // On récupere les données de l'utilisateur
+              $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE token = ?');
+              $req->execute(array($_SESSION['user']));
+              $data = $req->fetch();
+            ?>
+              <form action="./connect/deconnexion.php" method="post" class=" ">
+                <div class=""> <input type="submit" name="envoyer" value="Deconnexion" class="rounded text-white bg-danger"></div>
+              </form>
+              <?php if ($data['ADMIN'] == 1) { ?>
+                <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
+                  <a class="btn  rounded m-2 text-white bg-gradient text-uppercase big_screen_login" id=" " href="./admin/panel_admin.php">Panel_Admin</a>
+                </div> <?php }
+                    } else { ?>
 
-        <div class="collapse navbar-collapse flex-grow-0 flex-wrap " id="navbarSupportedContent">
-          <ul class="navbar-nav f-100 justify-content-between  ">
-            <li class="nav-item flex-grow-1 m-1 ">
-              <a class="btn nav-link  text-center border border-dark   text-white bg-gradient nav_style" href="home.php" aria-current="page">HOME</a>
-            </li>
-            <li class="nav-item dropdown flex-grow-1 m-1  ">
-              <a class="nav-link  btn dropdown-toggle border border-dark  text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                TOOLS
-              </a>
-              <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="./tools/timer.php" style="font-weight: bold">TIMER</a></li>
-                <li><a class="dropdown-item  " href="./tools/simulateurs_stamina.php" style="font-weight: bold">Simulateur Stamina</a></li>
-                <li><a class="dropdown-item  " href="./tools/simulateurs_combat.php" style="font-weight: bold">Simulateur Combat</a></li>
-                <li><a class="dropdown-item  " href="./tools/suivi_price.php" style="font-weight: bold">Suivi price</a></li>
-
-
-              </ul>
-            </li>
-
-            <li class="nav-item flex-grow-1 m-1  rounded  ">
-              <a class="nav-link btn dropdown-toggle  text-center border border-dark  text-white bg-gradient" href="#" aria-current="page">FORUMS</a>
-            </li>
+              <div class="" id="SMALL_screen_register">
+                <a class="btn  rounded m-2 border border-dark text-white bg-gradient  text-uppercase " id="" href="connect/login.php">Login</a>
+                <a class="btn  rounded m-2 border border-dark  text-white bg-gradient  text-uppercase   " id="" href="connect/register.php">Register</a>
+              </div>
 
 
-            <li class="nav-item flex-grow-1 dropdown  m-1  ">
-              <a class="nav-link btn dropdown-toggle  text-center border border-dark  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-                TURORIEL
-              </a>
-              <ul class="dropdown-menu text-center nav_style_display">
-                <li><a class="dropdown-item" href="#" style="font-weight: bold">Video</a></li>
-                <li><a class="dropdown-item " href="#">Article</a></li>
-              </ul>
-            </li>
 
-          </ul>
-          <form class="  search f-100 " role="search" id="search">
-            <input class="form-control " id="barre_search" type="search" aria-label="Search" placeholder="Search">
-          </form>
+            <?php } ?>
+          </div>
+          <button class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- BARRE DE NAVIGATION -->
+
+          <div class="collapse navbar-collapse flex-grow-0 flex-wrap " id="navbarSupportedContent">
+            <ul class="navbar-nav f-100 justify-content-between  ">
+              <li class="nav-item flex-grow-1 m-1 ">
+                <a class="btn nav-link  text-center border border-dark   text-white bg-gradient nav_style" href="home.php" aria-current="page">HOME</a>
+              </li>
+              <li class="nav-item dropdown flex-grow-1 m-1  ">
+                <a class="nav-link  btn dropdown-toggle border border-dark  text-center  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  TOOLS
+                </a>
+                <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./tools/timer.php" style="font-weight: bold">TIMER</a></li>
+                  <li><a class="dropdown-item  " href="./tools/simulateurs_stamina.php" style="font-weight: bold">Simulateur Stamina</a></li>
+                  <li><a class="dropdown-item  " href="./tools/simulateurs_combat.php" style="font-weight: bold">Simulateur Combat</a></li>
+                  <li><a class="dropdown-item  " href="./tools/suivi_price.php" style="font-weight: bold">Suivi price</a></li>
 
 
-        </div>
+                </ul>
+              </li>
 
-        <?php if (isset($_SESSION['user'])) {
+              <li class="nav-item flex-grow-1 m-1  rounded  ">
+                <a class="nav-link btn dropdown-toggle  text-center border border-dark  text-white bg-gradient" href="#" aria-current="page">FORUMS</a>
+              </li>
 
-          // On récupere les données de l'utilisateur
-          $req = $bdd->prepare('SELECT * FROM utilisateurs WHERE token = ?');
-          $req->execute(array($_SESSION['user']));
-          $data = $req->fetch();
-        ?>
-          <form action="./connect/deconnexion.php" method="post" class=" ">
-            <div class=""> <input type="submit" name="envoyer" value="Deconnexion" class="rounded text-white bg-danger"></div>
-          </form>
-          <?php if ($data['ADMIN'] == 1) { ?>
-            <div class=" position-absolute top-0 start-100 text-center translate-100 w-25" id="BIG_screen_register">
-              <a class="btn  rounded m-2 text-white bg-gradient text-uppercase big_screen_login" id=" " href="./admin/panel_admin.php">Panel_Admin</a>
-            </div> <?php }}
-                else { ?>
 
-          <div class="" id="SMALL_screen_register">
-            <a class="btn  rounded m-2 text-white bg-gradient  text-uppercase " id="" href="connect/login.php">Login</a>
-            <a class="btn  rounded m-2 text-white bg-gradient  text-uppercase   " id="" href="connect/register.php">Register</a>
+              <li class="nav-item flex-grow-1 dropdown  m-1  ">
+                <a class="nav-link btn dropdown-toggle  text-center border border-dark  text-white bg-gradient nav_style " data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  TURORIEL
+                </a>
+                <ul class="dropdown-menu text-center nav_style_display">
+                  <li><a class="dropdown-item" href="#" style="font-weight: bold">Video</a></li>
+                  <li><a class="dropdown-item " href="#">Article</a></li>
+                </ul>
+              </li>
+
+            </ul>
+            <form class="  search f-100 " role="search" id="search">
+              <input class="form-control " id="barre_search" type="search" aria-label="Search" placeholder="Search">
+            </form>
+
+
           </div>
 
 
-
-        <?php } ?>
-        <!-- LOGIN/REGISTER -->
+          <!-- LOGIN/REGISTER -->
 
 
 
@@ -114,19 +117,29 @@ require_once './config/config.php'; // ajout connexion bdd
 
 
 
-      </nav>
+        </nav>
 
 
-    </header>
+      </header>
+      <div class="text-white text-center" id="Marquee">
+        <span id="TAP" class="ms-auto me-auto btn text-center text-center border border-dark   text-white bg-gradient nav_style">TAP/USD : </span>
+        <span id="MC" class="ms-auto me-auto btn  text-center text-center border border-dark   text-white bg-gradient nav_style"> MC/USD : </span>
+        <span id="BUSD" class="ms-auto me-auto btn text-center text-center border border-dark   text-white bg-gradient nav_style"> BUSD/USD : </span>
+        <span id="BNB" class="ms-auto me-auto btn text-center text-center border border-dark   text-white bg-gradient nav_style"> BNB/USD : </span>
+        <span id="SOL" class="ms-auto me-auto btn text-center text-center border border-dark   text-white bg-gradient nav_style"> SOL/USD : </span>
+        <script type="text/javascript">
+          crypto();
+        </script>
+      </div>
+    </div>
     <main class="d-flex justify-content-center flex-wrap">
+
       <div class=" f-25 d-flex justify-content-center flex-wrap">
         <div class="d-flex f-100">
           <div class="flex-grow-1 text-center">
             <h1 class="text-white bg-gradient">Timer</h1>
           </div>
-          <div class="flex-grow-1 text-center">
-            <h1 class="text-white bg-gradient">Price</h1>
-          </div>
+
         </div>
         <!-- liste des articles -->
         <div class="">
@@ -148,6 +161,7 @@ require_once './config/config.php'; // ajout connexion bdd
       </div>
     </main>
   </div>
+
 </body>
 
 </html>

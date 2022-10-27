@@ -207,3 +207,13 @@ p{
 a{
   font-family: Fuzzy Bubbles !important;
 }
+
+#Marquee{
+  display: inline-block;
+  width: 100%;
+
+}
+
+.bg-gradiant{
+  linear-gradient : 180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15);
+}
