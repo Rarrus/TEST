@@ -26,7 +26,7 @@ ACTUEL
 
 - [x] recupere le prix des cryptos
 - [ ] récuperer le prix des nft
-- [ ] récuperer le prix de l'hdv
+- [x] (récuperer le prix de l'hdv)(chercher si temps)
 - [ ] recupere le Timer World boss
 
 ### V0.4 "Outils"
@@ -34,7 +34,7 @@ ACTUEL
 #### 6/11/2022
 
 - [ ] page pour gere le prix des NFT
-- [ ] page pour gere le prix de l'hdv
+- [ ] (page pour gere le prix de l'hdv)(chercher si temps)
 - [ ] simulateur stamina
 - [ ] simulateur combat
 

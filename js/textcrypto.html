@@ -4,8 +4,6 @@
   <body>
     <script>
        fetch("https://api.coingecko.com/api/v3/simple/price?ids=tap-fantasy&vs_currencies=usd")
-       .then(res => res.json())
-       .then(body => console.log((JSON.parse((body)))))
        fetch("https://api.coingecko.com/api/v3/simple/price?ids=busd&vs_currencies=usd")
        .then(res2 => res2.text())
        .then(body => console.log((body).replace('{"busd":{"usd":','').replace('}}','')))
