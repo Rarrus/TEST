@@ -1,0 +1,2 @@
+- [ ] script py pour mettre le nom de tous les nft
+- [ ] page suivante selection quelle lvl attribut apres stat, nft dispo selection 

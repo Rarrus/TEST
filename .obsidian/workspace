@@ -1,0 +1,140 @@
+{
+  "main": {
+    "id": "f189f5b0f55b981b",
+    "type": "split",
+    "children": [
+      {
+        "id": "0551cbec0e7effe2",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "EDT.md",
+            "mode": "preview",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6864f626b4b5c932",
+    "type": "split",
+    "children": [
+      {
+        "id": "a816e4029ce82076",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5cb71e79f6b9f7fe",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "20dde1e652729b83",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1d3484786cb0dc19",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8f65b528cea6425f",
+    "type": "split",
+    "children": [
+      {
+        "id": "d02cc372ff060915",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7822c42d2d443e6c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "EDT.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f283560ee84b709c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "EDT.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ba3c4484398039a7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0e5807ebcc46f6b6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "EDT.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "0551cbec0e7effe2",
+  "lastOpenFiles": [
+    "simulateur d'energie.md",
+    "Simulateur de combat.md",
+    "NFT.md",
+    "EDT.md",
+    "README.md",
+    "DEFI 24H.md"
+  ]
+}

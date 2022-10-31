@@ -25,7 +25,7 @@ ACTUEL
 
 
 - [x] recupere le prix des cryptos
-- [ ] récuperer le prix des nft
+- [x] récuperer le prix des nft
 - [x] (récuperer le prix de l'hdv)(chercher si temps)
 - [ ] recupere le Timer World boss
 
@@ -54,7 +54,12 @@ ACTUEL
 - [ ] tutorial video
 - [ ] tutorial ecrit
 
-### ...
+###  V0.7 "World Boss activite connexes"
+
+#### 4/12/2022
+
+- [ ] Timer World Boss
+- [ ] Activite connexes
 
 ### V.1 "Sortie"
 
