@@ -60,14 +60,7 @@
             <input class="form-control m-2" type="search" aria-label="Search" placeholder="Search">
           </form>
         </div>
-        <!-- LOGIN/REGISTER -->
-        <?php if (!isset($_SESSION["user"])) {
-
-          include("notconnect.php");
-        } else {
-          include("connect.php");
-        }; ?>
-
+        
 
 
 
